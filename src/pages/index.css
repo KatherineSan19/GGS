@@ -31,7 +31,7 @@
   width: 50%;
   max-width: 105px;
   }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 770px) {
   #logo_custom{
     width: 10%;
     }
@@ -281,4 +281,119 @@
 }
 .line img{
   width: 20%;
+}
+
+
+/*-----------oficina CSS------------*/
+.mainPicture{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  padding-top: 9%;
+  padding-bottom: 2%;
+}
+.mainPicture img{
+  width: 80%;
+}
+
+.mainText1{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 600;
+}
+.mainText2{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 60%;
+  color: #c5d9d6;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.mainText3{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  font-family: 'Oxygen', sans-serif;
+}
+.mainText3 p{
+  width: 55%;
+  text-align:center;
+}
+.cardsOficina{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  padding-top: 9%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+}
+.cardsOficina h4{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: black;
+}
+.cardsOficina h3{
+  color: #c5d9d6;
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+}
+.cardsOficina p{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  font-family: 'Oxygen', sans-serif;
+}
+.detail{
+  text-align: inherit!important;
+}
+.small{
+  font-size: 13px!important;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.studies{
+  padding-top: 10%;
+  padding-left: 15%!important;
+  padding-right: 15%!important;
+}
+.detailFooter{
+  color: #c5d9d6!important;
+  font-weight: 600;
+  border-top-style: solid;
+  border-top-width: thin;
+  border-color: #B8B1B1;
+  padding-top: 5%;
+}
+.cardsOficina Col{
+  border-style: none!important;
+}
+.pictureDetail{
+  border-top: -10px!important;
 }
