@@ -43,6 +43,7 @@
     background-size: cover;
     min-height: calc( 90vh - 115px );
     display: flex;
+    margin-top: 60px!important;
 }
 .content1-proyectotemplate{
   width: 100%;
@@ -336,14 +337,13 @@
   text-align:center;
 }
 .cardsOficina{
-  display: flex;
-  width: 100%;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
-  padding-top: 9%;
+  display: flex!important;
+  width: 100%!important;
+  vertical-align: middle!important;
+  align-items: center!important;
+  justify-content: center!important;
+  margin-top: 20%;
   padding-bottom: 2%;
-  padding-left: 2%;
 }
 .cardsOficina h4{
   display: flex;
@@ -388,12 +388,198 @@
   font-weight: 600;
   border-top-style: solid;
   border-top-width: thin;
-  border-color: #B8B1B1;
-  padding-top: 5%;
+  border-color: #c5d9d6;
+  padding-top: 17%;
+  margin-bottom: -5px;
 }
-.cardsOficina Col{
+.plusDiv{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+}
+.plus{
+  width: 45px;
+  margin-bottom: -17px;
+}
+.cardsOficina Card{
   border-style: none!important;
 }
+.divPictureDetail{
+  display: flex!important;
+  width: 100%!important;
+  vertical-align: middle!important;
+  justify-content: center!important;
+}
 .pictureDetail{
-  border-top: -10px!important;
+  margin-top: -65%!important;
+  width: 80%!important;
+}
+.sentence{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+  background-color: #c5d9d6;
+  margin-top: 30px;
+
+}
+.sentenceImg{
+  width: 400px;
+  height: 280px;
+  margin-top: 40px;
+  margin-bottom: 65px;
+}
+.comillas{
+  width: 100px;
+  height: 25px;
+  padding-right: 20px;
+  margin-top: 190px;
+}
+.sentence p{
+  width: 250px;
+  padding-bottom: 5%;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 27px;
+  margin-top: 80px;
+}
+.category{
+  margin: 0px!important;
+  width: 100%;
+}
+.ant-card-body{
+  padding: 0px!important;
+  margin: -8px!important;
+}
+/*-----------noticias_template CSS------------*/
+.cultura{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+  color: #ffa64d;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Oxygen', sans-serif;
+}
+.culturaText{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+  color: black;
+  font-size: 19px;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 600;
+
+}
+.culturaImg{
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 370px;
+  display: flex;
+  background-image: url("../images/cultura.jpg");
+}
+.culturaDiv1{
+ width: 25%;
+ float: left;
+ margin-right: 5%;
+ margin-top: 8%;
+ margin-left: 5%;
+}
+.agustinaSantana Icon{
+  margin-left: -5px;
+}
+.share-alt{
+  margin-top: -20px!important;
+}
+.culturaText1{
+  padding-left: 55px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Oxygen', sans-serif;
+}
+.culturaText2{
+  padding-left: 55px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Oxygen', sans-serif;
+}
+.culturaText3{
+  padding-left: 55px;
+  font-size: 9px;
+  font-family: 'Oxygen', sans-serif;
+  margin-bottom: 90px;
+}
+.culturaDiv2{
+  margin-top: 5%;
+  width: 38%;
+  float: left;
+  margin-bottom: 5%;
+}
+.culturaDiv2 p{
+  font-size: 14px;
+  font-family: 'Oxygen', sans-serif;
+}
+.centronoticias{
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+.culturaDiv3{
+  width: 22%;
+  float: left;
+  margin-left: 30px;
+  margin-top: 60%;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 85%;
+  color: black;
+}
+.culturaSubtitleImg{
+  width: 100%;
+  padding-bottom: 5%;
+}
+.panel{
+  width: 18%;
+  height: 85px;
+  float: left;
+}
+.culturaSubtitle{
+  width: 80%;
+  float: left;
+  padding-left: 5%;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 600;
+  color: black;
+}
+.p1{
+padding-top: 30%;
+}
+.masNoticias{
+  color: #ffa64d;
+  font-size: 16px;
+  margin-top: 45px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-top-width: thin;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: rgba(0, 0, 0, 0.65);
+  font-family: 'Oxygen', sans-serif;
+}
+.culturaContent p{
+  font-size: 19px;
+  color: black !important;
+  font-weight: 600;
+  font-family: 'Oxygen', sans-serif;
+  margin-bottom: 45px;
+}
+.culturaContent{
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #c5d9d6;
+  border-top-width: thin;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: rgba(0, 0, 0, 0.65);
 }

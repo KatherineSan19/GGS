@@ -6,6 +6,13 @@ import gustavo from '../images/gustavo.jpg';
 import agustina from '../images/agustina.jpg';
 import diego from '../images/diego.jpg';
 import logo from '../images/logo1.jpg';
+import plus from '../images/mas.png';
+import sentence from '../images/sentence.jpg'
+import comillas from '../images/comillas.jpg'
+import categoria1 from '../images/categoria11.jpg'
+import categoria2 from '../images/categoria2.jpg'
+import categoria3 from '../images/categoria3.jpg'
+import categoria4 from '../images/categoria4.jpg'
 import 'antd/dist/antd.css';
 const { Meta } = Card;
 class Oficina extends Component{
@@ -46,46 +53,87 @@ class Oficina extends Component{
             <p>Somos una firma de diseño y planificación que busca armonizar los asentamietos humanos con los sistemas naturales.</p>
           </div>
         </Row>
-        <Row gutter={16}>
-        <div className="cardsOficina">
+        <div className="cardsOficina" style={{ padding: '10px' }}>
+          <Row gutter={16}>
             <Col span={8}>
-              <Card
-                style={{ width: 300 }}
-                cover={<img src={gustavo}/>}>
+              <Card bordered={false}
+                style={{ width: 300, margin:20 }}
+                cover={<div className="divPictureDetail"><img className="pictureDetail" src={gustavo}/></div>}>
                 <h4>GUSTAVO</h4>
                 <h3>Gonzáles</h3>
                 <p className="mail"><b>ggonzález@ggsarquitectos.com</b></p>
                 <p className="small studies">Máster en Paisaje y Plani cación Ambiental</p>
                 <p className="detail small">Realizó estudios de maestría en Arquitectura del Paisaje y Planificación Ambiental en la Universidad Berkeley.</p>
+                <div className="plusDiv"><img className="plus" src={plus}></img></div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
             <Col span={8}>
-              <Card
-                style={{ width: 300 }}
-                cover={<img className="pictureDetail" src={agustina}/>}>
+              <Card bordered={false}
+                style={{ width: 300, margin:20 }}
+                cover={<div className="divPictureDetail"><img className="pictureDetail" src={agustina}/></div>}>
                 <h4>AGUSTINA</h4>
                 <h3>Santana</h3>
                 <p><b>asantana@ggsarquitectos.com</b></p>
                 <p className="small studies">Máster en Arquitectura y Diseño Urbano</p>
                 <p className="detail small">Realizó  estudios de maestria en Arquitectura y Diseño Urbano en la Universidad de Columbia, Nueva York.</p>
+                <div className="plusDiv"><img className="plus" src={plus}></img></div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
             <Col span={8}>
-              <Card
-                style={{ width: 300 }}
-                cover={<img src={diego}/>}>
+              <Card bordered={false}
+                style={{ width: 300, margin:20 }}
+                cover={<div className="divPictureDetail"><img className="pictureDetail" src={diego}/></div>}>
                 <h4>DIEGO</h4>
                 <h3>Solano</h3>
                 <p><b>darleada@ggsarquitectos.com</b></p>
                 <p className="small studies">Máster en Paisaje y Plani cación Ambiental</p>
                 <p className="detail small">Obtuvo su título de Arquitectura en la Universidad Católica de Guayaquil. Realizó  estudio  de maestría (...)</p>
+                <div className="plusDiv"><img className="plus" src={plus}></img></div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
+          </Row>
+        </div>
+        <Row>
+          <div className="sentence">
+            <img className="comillas"src={comillas}></img>
+            <p>la arquitectura solo se considera completa con la intervención del ser humano que la experimenta</p>
+            <img className="sentenceImg" src={sentence}></img>
           </div>
         </Row>
+        <div className="subtitle2">
+          <h4 className="mainText1">Algunos Proyectos</h4>
+        </div>
+        <div style={{padding: '0px', margin: '0px' }}>
+        <Row gutter={16}>
+          <Col span={6}>
+            <Card bordered={false}>
+              <img className="category" src={categoria1}></img>
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card bordered={false}>
+              <img className="category" src={categoria2}></img>
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card bordered={false}>
+              <img className="category" src={categoria3}></img>
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card bordered={false}>
+              <img className="category" src={categoria4}></img>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+      <div className="footer" style={{ marginBottom: '10px', marginTop: '17px' }}>
+        <p>This is a Website made by <b>Sundried</b></p>
+        <p>© Copyright 2019 GG + S All Rights Reserved</p>
+      </div>
       </div>
     );
   }
