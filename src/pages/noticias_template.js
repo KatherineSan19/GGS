@@ -5,13 +5,14 @@ import { Icon,Card, Button, Row, Col } from 'antd';
 import cultura from '../images/cultura.jpg';
 import agustinaSantana from '../images/agustinaSantana.png';
 import centronoticias from '../images/centronoticias.jpg';
+import flecha from '../images/flecha.jpg';
 import panel from '../images/panel.jpg';
 
 
 class Noticias extends Component {
   render() {
     return (
-      <div>
+      <div className="noticias">
         <h3 className="cultura">
           CULTURA
         </h3>
@@ -19,24 +20,27 @@ class Noticias extends Component {
           lorem ipsum dolor sit amet
         </h3>
         <div className="culturaImg">
+          <img src={cultura}></img>
         </div>
         <Row>
           <div className="culturaDiv1">
+            <div className="noticiasIcons">
+              <div className=""><Icon className="share-alt" type="share-alt"/></div>
+              <div style={{ marginTop: '10px' }}><Icon type="heart"/></div>
+            </div>
             <div className="agustinaSantana">
               <img src={agustinaSantana}></img>
-              <Icon className="share-alt" type="share-alt"/>
-              <Icon type="heart"/>
-              <p className="culturaText1"> POR AUGUSTINA SANTANA</p>
+              <p className="culturaText1"><img style={{ width: '20px' }} src={flecha} ></img> POR AUGUSTINA SANTANA</p>
               <p className="culturaText2">asantana@ggsarquitectos.com</p>
               <p className="culturaText3">Publicado Julio 2019</p>
             </div>
             <h3 className="masNoticias">más noticias</h3>
             <div className="culturaContent">
-              <Icon type="plus"/>
+              <div><Icon type="plus"/></div>
               <p>lorem ipsum dolor sit amet</p>
-              <Icon type="plus"/>
+              <div><Icon type="plus"/></div>
               <p>vivamus aliquet lectus non semper dapibus.</p>
-              <Icon type="plus"/>
+              <div><Icon type="plus"/></div>
               <p>consequat gravida facilisis at, accumsan in ante.</p>
             </div>
           </div>

@@ -38,7 +38,6 @@
   }
 .proyectotemplateImage{
     width: 100%;
-    background: url("../images/principal.jpg");
     background-position: center;
     background-size: cover;
     min-height: calc( 90vh - 115px );
@@ -286,6 +285,9 @@
 
 
 /*-----------oficina CSS------------*/
+.oficina{
+ font-family: 'Oxygen', sans-serif;
+}
 .mainPicture{
   display: flex;
   width: 100%;
@@ -452,6 +454,9 @@
   margin: -8px!important;
 }
 /*-----------noticias_template CSS------------*/
+.noticias{
+  font-family: 'Oxygen', sans-serif;
+}
 .cultura{
   display: flex;
   width: 100%;
@@ -477,38 +482,41 @@
   width: 100%;
   background-position: center;
   background-size: cover;
-  height: 370px;
   display: flex;
-  background-image: url("../images/cultura.jpg");
 }
 .culturaDiv1{
- width: 25%;
+ width: 28%;
  float: left;
  margin-right: 5%;
  margin-top: 8%;
- margin-left: 5%;
+ margin-left: 3%;
 }
-.agustinaSantana Icon{
-  margin-left: -5px;
+.agustinaSantana{
+  width: 80%;
+  float: left;
+  color: black;
 }
 .share-alt{
   margin-top: -20px!important;
 }
 .culturaText1{
-  padding-left: 55px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   font-family: 'Oxygen', sans-serif;
 }
+.culturaText1 img{
+  margin-right: 10px;
+
+}
 .culturaText2{
-  padding-left: 55px;
-  font-size: 11px;
+  padding-left: 30px;
+  font-size: 10px;
   font-weight: 600;
   font-family: 'Oxygen', sans-serif;
 }
 .culturaText3{
-  padding-left: 55px;
-  font-size: 9px;
+  padding-left: 30px;
+  font-size: 8px;
   font-family: 'Oxygen', sans-serif;
   margin-bottom: 90px;
 }
@@ -566,14 +574,9 @@ padding-top: 30%;
   border-bottom-width: thin;
   border-bottom-color: rgba(0, 0, 0, 0.65);
   font-family: 'Oxygen', sans-serif;
+  margin-left: 5%;
 }
-.culturaContent p{
-  font-size: 19px;
-  color: black !important;
-  font-weight: 600;
-  font-family: 'Oxygen', sans-serif;
-  margin-bottom: 45px;
-}
+
 .culturaContent{
   padding-left: 25px;
   padding-right: 25px;
@@ -582,4 +585,135 @@ padding-top: 30%;
   border-bottom-style: solid;
   border-bottom-width: thin;
   border-bottom-color: rgba(0, 0, 0, 0.65);
+  margin-left: 5%;
+}
+.culturaContent div{
+  color: #c5d9d6;
+  font-size: 120%;
+  font-weight: 600;
+}
+.culturaContent p{
+  font-size: 17px!important;
+  color: black !important;
+  font-weight: 600;
+  font-family: 'Oxygen', sans-serif;
+  margin-bottom: 45px;
+  margin-right: 10px;
+}
+.noticiasIcons{
+  width: 20%;
+  float: left;
+  font-size: 135%;
+  margin-top: 40%;
+  color: black;
+}
+/*-----------contacto CSS------------*/
+.contacto{
+  font-family: 'Oxygen', sans-serif;
+}
+.contactoImg{
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  margin-bottom: 0px;
+}
+.contactoLocation{
+  display: flex;
+  width: 100%;
+  background-color: #c5d9d6;
+  vertical-align: middle;
+  justify-content: center;
+  margin-top: -6%;
+}
+.contactoMap{
+  width: 75%;
+  border-radius: 18px;
+  background-color: #f2f6f6;
+  margin-top: -10%;
+  margin-bottom: 4%;
+
+}
+.contactoMap img{
+  width: 65%;
+  float: left;
+  margin-left: 2%;
+  border-radius: 15px;
+  margin-bottom: 0%;
+
+}
+.contactoPortoviejo{
+  width: 25%;
+  float: left;
+  margin-left: 5%;
+  color: black;
+}
+.contactoPortoviejo h3{
+  margin-top: 20%;
+  color: #ffa64d;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+.contactoP{
+  margin-top: 30px;
+}
+.contactoPortoviejo p{
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+.contactoPanelMail{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.contactoMail{
+  display: flex;
+  width: 90%;
+  vertical-align: middle;
+  justify-content: center;
+  background-color: #394145;
+  border-radius: 18px;
+  color: white;
+}
+.ant-input{
+  background-color: #394145!important;
+  color: white!important;
+  border-style: none!important;
+  border-radius: 0px!important;
+  margin-bottom: -2px!important;
+}
+.contactoEmail{
+  width: 40%;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+.contactoEmail img{
+  margin-bottom: -8px!important;
+}
+.contactoEmail p{
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+.contactoMsj{
+  width: 20%;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 10px;
+  padding-right: 20px;
+}
+
+/*-----------proyecto_template CSS------------*/
+
+
+
+.ant-tabs-nav .ant-tabs-tab-active {
+    color: #ffa64d !important;
+    font-weight: 500;
+    border-bottom-style:none!important;
 }

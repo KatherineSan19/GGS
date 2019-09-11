@@ -48,13 +48,13 @@ class Template extends Component {
             <div className="collapse navbar-collapse " id="collapsibleNavbar">
               <ul className="navbar-nav ml-auto ">
                 <li className="nav-item">
-                  <a className="nav-link" href="#offer"><b><Icon type="plus"  className="icon"/> Proyectos</b></a>
+                  <a className="nav-link" href="./proyecto_general"><b><Icon type="plus"  className="icon"/> Proyectos</b></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#"><b><Icon type="plus"  className="icon"/> Oficina</b></a>
+                  <a className="nav-link" href="./oficina"><b><Icon type="plus"  className="icon"/> Oficina</b></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#"><b>< Icon type="plus"  className="icon"/> Contacto</b></a>
+                  <a className="nav-link" href="./contacto"><b>< Icon type="plus"  className="icon"/> Contacto</b></a>
                 </li>
               </ul>
             </div>
@@ -62,6 +62,7 @@ class Template extends Component {
         </Row>
         <Row>
           <div className="proyectotemplateImage">
+            <img src={principal}></img>
           </div>
         </Row>
         <Row>
