@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./index.css";
-import { Icon, Tabs, Form, Input, Modal,Card, Button, Label,Alert,message,Select,Checkbox,DatePicker, Row, Col } from 'antd';
+import { Icon, Tabs, Card, Button, Row, Col, Menu } from 'antd';
 import principal from '../images/principal.jpg';
 import mapa from '../images/mapa.jpg';
 import carretera from '../images/carretera.png';
-import logo from '../images/logo1.jpg';
+import logo from '../images/logo_ggs.jpg';
 import arbol1 from '../images/arbol1.jpg';
 import arbol2 from '../images/arbol2.jpg';
 import centro from '../images/centro.jpg';
@@ -21,9 +21,11 @@ import proyecto2 from '../images/proyecto2.jpg';
 import proyecto3 from '../images/proyecto3.jpg';
 import proyecto4 from '../images/proyecto4.jpg';
 import linea from '../images/linea.jpg';
+import liston from '../images/liston.jpg';
 import 'antd/dist/antd.css';
 
 const { TabPane } = Tabs;
+const { SubMenu } = Menu;
 
 
 class Template extends Component {
@@ -31,6 +33,10 @@ class Template extends Component {
 
   callback=(key)=>{
     console.log(key);
+  }
+
+  handleClick=(e)=>{
+  console.log('click', e);
   }
 
   render() {
@@ -42,9 +48,17 @@ class Template extends Component {
         <Row type="flex" justify="center" className="rowMenu">
           <nav className="navbar fixed-top navbar-expand-md custom-navbar navbar-dark">
             <img className="navbar-brand" src={logo} id="logo_custom" width="10%"  alt="logo"></img>
-            <button className="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span className="navbar-toggler-icon "></span>
-            </button>
+            <div className="optionalMenu">
+              <Menu onClick={this.handleClick} style={{ width: 56, height:46 }} mode="vertical">
+                <SubMenu key="sub1" title={<span><Icon type="menu" /></span> }>
+                  <Menu.ItemGroup title="Menú">
+                    <Menu.Item key="1"><a href="./proyecto_general"><Icon type="plus"  className="icon"/> Proyectos</a></Menu.Item>
+                    <Menu.Item key="1"><a href="./oficina"><Icon type="plus"  className="icon"/> Oficina</a></Menu.Item>
+                    <Menu.Item key="1"><a href="./contacto"><Icon type="plus"  className="icon"/> Contacto</a></Menu.Item>
+                  </Menu.ItemGroup>
+                </SubMenu>
+              </Menu>
+            </div>
             <div className="collapse navbar-collapse " id="collapsibleNavbar">
               <ul className="navbar-nav ml-auto ">
                 <li className="nav-item">
@@ -99,7 +113,7 @@ class Template extends Component {
               <div className="contentMap"><img className="" src={mapa}></img></div>
               <p className="contentData">FICHA TÉCNICA</p>
               <div className="dataSheet-content">
-                <h5>Tipo de Proyecto</h5>
+                <h5><img className="liston" src={liston}></img>Tipo de Proyecto</h5>
                 <p>Planificación Urbana</p>
               </div>
               <div className="dataSheet-content">

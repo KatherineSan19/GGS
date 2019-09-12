@@ -22,22 +22,22 @@ class General extends Component{
           <TabPane tab="Planificación Estratégica" key="1">
             <div style={{padding: '0px', margin: '0px' }}>
               <Row gutter={16}>
-                <Col span={6}>
+                <Col md={6} xs={12}>
                   <Card bordered={false}>
                     <img className="category" src={categoria1}></img>
                   </Card>
                 </Col>
-                <Col span={6}>
+                <Col md={6} xs={12}>
                   <Card bordered={false}>
                     <img className="category" src={categoria2}></img>
                   </Card>
                 </Col>
-                <Col span={6}>
+                <Col md={6} xs={12}>
                   <Card bordered={false}>
                     <img className="category" src={categoria3}></img>
                   </Card>
                 </Col>
-                <Col span={6}>
+                <Col md={6} xs={12}>
                   <Card bordered={false}>
                     <img className="category" src={categoria4}></img>
                   </Card>

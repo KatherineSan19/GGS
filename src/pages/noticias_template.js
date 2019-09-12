@@ -29,7 +29,7 @@ class Noticias extends Component {
               <div style={{ marginTop: '10px' }}><Icon type="heart"/></div>
             </div>
             <div className="agustinaSantana">
-              <img src={agustinaSantana}></img>
+              <img className="santana" src={agustinaSantana}></img>
               <p className="culturaText1"><img style={{ width: '20px' }} src={flecha} ></img> POR AUGUSTINA SANTANA</p>
               <p className="culturaText2">asantana@ggsarquitectos.com</p>
               <p className="culturaText3">Publicado Julio 2019</p>

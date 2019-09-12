@@ -53,11 +53,18 @@ class Oficina extends Component{
             <p>Somos una firma de diseño y planificación que busca armonizar los asentamietos humanos con los sistemas naturales.</p>
           </div>
         </Row>
+        <div className="subtitle2">
+          <h4 className="mainText1">El equipo</h4>
+        </div>
+        <div className="subtitle2">
+          <p className="mainText2">CO-FUNDADORES</p>
+        </div>
+        <div className="elEquipo">
         <div className="cardsOficina" style={{ padding: '10px' }}>
           <Row gutter={16}>
-            <Col span={8}>
+            <Col md={8} xs={24} className="minCard">
               <Card bordered={false}
-                style={{ width: 300, margin:20 }}
+                style={{ width: '80%', margin:20 }}
                 cover={<div className="divPictureDetail"><img className="pictureDetail" src={gustavo}/></div>}>
                 <h4>GUSTAVO</h4>
                 <h3>Gonzáles</h3>
@@ -68,26 +75,26 @@ class Oficina extends Component{
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
-            <Col span={8}>
+            <Col md={8} xs={24} className="minCard">
               <Card bordered={false}
-                style={{ width: 300, margin:20 }}
+                style={{ width: '80%', margin:20 }}
                 cover={<div className="divPictureDetail"><img className="pictureDetail" src={agustina}/></div>}>
                 <h4>AGUSTINA</h4>
                 <h3>Santana</h3>
-                <p><b>asantana@ggsarquitectos.com</b></p>
+                <p className="mail"><b>asantana@ggsarquitectos.com</b></p>
                 <p className="small studies">Máster en Arquitectura y Diseño Urbano</p>
                 <p className="detail small">Realizó  estudios de maestria en Arquitectura y Diseño Urbano en la Universidad de Columbia, Nueva York.</p>
                 <div className="plusDiv"><img className="plus" src={plus}></img></div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
-            <Col span={8}>
+            <Col md={8} xs={24} className="minCard">
               <Card bordered={false}
-                style={{ width: 300, margin:20 }}
+                style={{ width: '80%', margin:20 }}
                 cover={<div className="divPictureDetail"><img className="pictureDetail" src={diego}/></div>}>
                 <h4>DIEGO</h4>
                 <h3>Solano</h3>
-                <p><b>darleada@ggsarquitectos.com</b></p>
+                <p className="mail"><b>darleada@ggsarquitectos.com</b></p>
                 <p className="small studies">Máster en Paisaje y Plani cación Ambiental</p>
                 <p className="detail small">Obtuvo su título de Arquitectura en la Universidad Católica de Guayaquil. Realizó  estudio  de maestría (...)</p>
                 <div className="plusDiv"><img className="plus" src={plus}></img></div>
@@ -95,6 +102,7 @@ class Oficina extends Component{
               </Card>
             </Col>
           </Row>
+        </div>
         </div>
         <Row>
           <div className="sentence">
@@ -108,22 +116,22 @@ class Oficina extends Component{
         </div>
         <div style={{padding: '0px', margin: '0px' }}>
         <Row gutter={16}>
-          <Col span={6}>
+          <Col md={6} xs={12}>
             <Card bordered={false}>
               <img className="category" src={categoria1}></img>
             </Card>
           </Col>
-          <Col span={6}>
+          <Col md={6} xs={12}>
             <Card bordered={false}>
               <img className="category" src={categoria2}></img>
             </Card>
           </Col>
-          <Col span={6}>
+          <Col md={6} xs={12}>
             <Card bordered={false}>
               <img className="category" src={categoria3}></img>
             </Card>
           </Col>
-          <Col span={6}>
+          <Col md={6} xs={12}>
             <Card bordered={false}>
               <img className="category" src={categoria4}></img>
             </Card>
