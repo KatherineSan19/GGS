@@ -17,71 +17,62 @@ class General extends Component{
 
   render(){
     return(
-      <div className="generalTabs">
-        <Tabs defaultActiveKey="1" onChange={this.callback}>
-          <TabPane tab="Planificación Estratégica" key="1">
-            <div style={{padding: '0px', margin: '0px' }}>
-              <Row gutter={16}>
-                <Col md={6} xs={12}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria1}></img>
-                  </Card>
-                </Col>
-                <Col md={6} xs={12}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria2}></img>
-                  </Card>
-                </Col>
-                <Col md={6} xs={12}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria3}></img>
-                  </Card>
-                </Col>
-                <Col md={6} xs={12}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria4}></img>
-                  </Card>
-                </Col>
-              </Row>
-            </div>
-            <div style={{padding: '0px', margin: '0px' }}>
-              <Row gutter={16}>
-                <Col span={6}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria1}></img>
-                  </Card>
-                </Col>
-                <Col span={6}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria2}></img>
-                  </Card>
-                </Col>
-                <Col span={6}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria3}></img>
-                  </Card>
-                </Col>
-                <Col span={6}>
-                  <Card bordered={false}>
-                    <img className="category" src={categoria4}></img>
-                  </Card>
-                </Col>
-              </Row>
-            </div>
-          </TabPane>
-          <TabPane tab="Planificación Territorial" key="2">
-
-          </TabPane>
-          <TabPane tab="Paisaje" key="3">
-
-          </TabPane>
-          <TabPane tab="Diseño Urbano" key="4">
-
-          </TabPane>
-          <TabPane tab="Arquitectura" key="5">
-
-          </TabPane>
-        </Tabs>
+      <div className="">
+        <div className="generalTabs">
+          <h3><a href="./noticias_template">Arquitectura</a></h3>
+          <h3><a href="./noticias_template">Diseño Urbano</a></h3>
+          <h3><a href="./noticias_template">Paisaje</a></h3>
+          <h3><a href="./noticias_template">Planificación Territorial</a></h3>
+          <h3><a href="./noticias_template">Planificación Estratégica</a></h3>
+        </div>
+        <div className="generalImg" style={{padding: '0px', margin: '0px' }}>
+          <Row gutter={16}>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria1}></img>
+              </Card>
+            </Col>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria2}></img>
+              </Card>
+            </Col>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria3}></img>
+              </Card>
+            </Col>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria4}></img>
+              </Card>
+            </Col>
+          </Row>
+        </div>
+        <div style={{padding: '0px', margin: '0px' }}>
+          <Row gutter={16}>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria1}></img>
+              </Card>
+            </Col>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria2}></img>
+              </Card>
+            </Col>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria3}></img>
+              </Card>
+            </Col>
+            <Col md={6} xs={12}>
+              <Card bordered={false}>
+                <img className="category" src={categoria4}></img>
+              </Card>
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }

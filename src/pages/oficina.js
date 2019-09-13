@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
-import { Icon, Tabs, Form, Input, Modal,Card, Button, Label,Alert,message,Select,Checkbox,DatePicker, Row, Col } from 'antd';
+import { Icon, Tabs, Form, Input,Card, Row, Col, Menu, Dropdown} from 'antd';
 import oficina from '../images/oficina.jpg';
 import gustavo from '../images/gustavo.jpg';
 import agustina from '../images/agustina.jpg';
@@ -15,6 +15,13 @@ import categoria3 from '../images/categoria3.jpg'
 import categoria4 from '../images/categoria4.jpg'
 import 'antd/dist/antd.css';
 const { Meta } = Card;
+const menu = (
+  <Menu>
+    <Menu.Item key="0">
+  Hola
+  </Menu.Item>
+  </Menu>
+);
 class Oficina extends Component{
   render() {
     return (
@@ -71,7 +78,8 @@ class Oficina extends Component{
                 <p className="mail"><b>ggonzález@ggsarquitectos.com</b></p>
                 <p className="small studies">Máster en Paisaje y Plani cación Ambiental</p>
                 <p className="detail small">Realizó estudios de maestría en Arquitectura del Paisaje y Planificación Ambiental en la Universidad Berkeley.</p>
-                <div className="plusDiv"><img className="plus" src={plus}></img></div>
+                <div className="plusDiv"><img className="plus" src={plus}></img>
+                </div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
@@ -97,7 +105,9 @@ class Oficina extends Component{
                 <p className="mail"><b>darleada@ggsarquitectos.com</b></p>
                 <p className="small studies">Máster en Paisaje y Plani cación Ambiental</p>
                 <p className="detail small">Obtuvo su título de Arquitectura en la Universidad Católica de Guayaquil. Realizó  estudio  de maestría (...)</p>
-                <div className="plusDiv"><img className="plus" src={plus}></img></div>
+                <div className="plusDiv">
+                <img className="plus" src={plus}></img>
+                </div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
