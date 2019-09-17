@@ -13,6 +13,7 @@ import categoria1 from '../images/categoria11.jpg'
 import categoria2 from '../images/categoria2.jpg'
 import categoria3 from '../images/categoria3.jpg'
 import categoria4 from '../images/categoria4.jpg'
+import imgFloat from '../images/oficina_float.jpg'
 import 'antd/dist/antd.css';
 const { Meta } = Card;
 const menu = (
@@ -60,11 +61,45 @@ class Oficina extends Component{
             <p>Somos una firma de diseño y planificación que busca armonizar los asentamietos humanos con los sistemas naturales.</p>
           </div>
         </Row>
-        <div className="subtitle2">
+        <Row className="titleFloat ">
+          <div className="subtitle2">
+            <h4 className="mainText1">Enfoque</h4>
+          </div>
+          <div className="subtitle2 titleFloat2">
+            <p className="mainText2" style={{ color: 'black' }}>Valores</p>
+          </div>
+          <div className="oficinaImg">
+            <img src={imgFloat}></img>
+            <div className="parrafosFloat">
+              <p><b>GG+S arquitectos</b> somos una firma de diseño y planificación que busca armonizar los asentamietos humanos con los sistemas naturales.
+              </p>
+            </div>
+            <div className="parrafosFloat2">
+              <p className="parrafo1">01</p>
+              <p className="parrafo2">SOSTENIBILIDAD</p>
+              <p className="parrafo3">laoreet. psum dolor sit amet, consectetuer adipiscingelit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+              </p>
+            </div>
+            <div className="parrafosFloat3">
+              <p className="parrafo1">02</p>
+              <p className="parrafo2">SOSTENIBILIDAD</p>
+              <p className="parrafo3">laoreet. psum dolor sit amet, consectetuer adipiscingelit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+              </p>
+            </div>
+            <div className="parrafosFloat4">
+              <p className="parrafo1">03</p>
+              <p className="parrafo2">SOSTENIBILIDAD</p>
+              <p className="parrafo3">laoreet. psum dolor sit amet, consectetuer adipiscingelit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+              </p>
+            </div>
+          </div>
+
+        </Row>
+        <div className="subtitle2" style={{margin:'0px', padding:'0px' }}>
           <h4 className="mainText1">El equipo</h4>
         </div>
-        <div className="subtitle2">
-          <p className="mainText2">CO-FUNDADORES</p>
+        <div className="subtitle2" style={{margin:'0px', padding:'0px' }}>
+          <p className="mainText2" style={{margin:'0px', padding:'0px' }}>CO-FUNDADORES</p>
         </div>
         <div className="elEquipo">
         <div className="cardsOficina" style={{ padding: '10px' }}>
@@ -124,7 +159,7 @@ class Oficina extends Component{
         <div className="subtitle2">
           <h4 className="mainText1">Algunos Proyectos</h4>
         </div>
-        <div style={{padding: '0px', margin: '0px' }}>
+        <div style={{padding: '0px', margin: '0px', width:'99.4%' }}>
         <Row gutter={16}>
           <Col md={6} xs={12}>
             <Card bordered={false}>

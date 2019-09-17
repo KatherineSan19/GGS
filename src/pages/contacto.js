@@ -52,8 +52,8 @@ class Contacto extends Component{
         <div className="subtitle2">
           <h2 className="mainText1">Algunos Proyectos</h2>
         </div>
-        <div style={{padding: '0px', margin: '0px' }}>
-        <Row gutter={16}>
+        <div style={{padding: '0px', margin: '0px', width:'99%' }}>
+        <Row>
           <Col span={6}>
             <Card bordered={false}>
               <img className="category" src={categoria1}></img>
