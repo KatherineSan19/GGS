@@ -18,8 +18,6 @@ import galeria8 from '../images/galeria8.jpg';
 import galeria9 from '../images/galeria9.jpg';
 import proyecto1 from '../images/proyecto1.jpg';
 import proyecto2 from '../images/proyecto2.jpg';
-import proyecto3 from '../images/proyecto3.jpg';
-import proyecto4 from '../images/proyecto4.jpg';
 import linea from '../images/linea.jpg';
 import liston from '../images/liston.jpg';
 import 'antd/dist/antd.css';
@@ -197,8 +195,8 @@ class Template extends Component {
           <div className="proyecto">
             <img src={proyecto1}></img>
             <img src={proyecto2}></img>
-            <img src={proyecto3}></img>
-            <img src={proyecto4}></img>
+            <img src={proyecto1}></img>
+            <img src={proyecto1}></img>
           </div>
         </Row>
         <Row>

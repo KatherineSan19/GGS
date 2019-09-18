@@ -449,6 +449,7 @@
   margin-bottom: 0px;
 }
 .proyecto img{
+  position: relative;
   width: 23%;
   padding-left: 15px;
   padding-right: 15px;
@@ -710,9 +711,16 @@
   margin-top: 80px;
 }
 .category{
-  margin: 0px!important;
   width: 100%;
+  display: flex !important;
+  position: relative;
+  vertical-align: middle;
+  align-content: center !important;
+  align-items: center!important;
+  justify-content: center;
+  margin: 0px!important;
 }
+
 .ant-card-body{
   padding: 0px!important;
   margin: -8px!important;
@@ -1000,6 +1008,33 @@ padding-top: 30%;
 }
 .generalImg{
   margin-top: 2%!important;
+}
+.category img{
+  margin: 0px!important;
+}
+.textCategory{
+  width: 200px;
+  position: absolute;
+  left: 8%;
+  bottom: 12%;
+  font-size: 15px;
+  color:  white;
+  text-shadow: 3px 6px 5px black;
+
+}
+.textCategoryVertival{
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-shadow: 0px 0px 0px black !important;
+  position: absolute;
+  left: 8%;
+  top: 7%;
+  font-size: 15px;
+  color:  white;
+}
+.textCategoryP{
+  text-shadow: 0px 0px 4px black !important;
+  font-size: 12px!important;
 }
 
 /*----------- Home CSS------------*/

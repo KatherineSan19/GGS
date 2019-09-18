@@ -93,7 +93,6 @@ class Oficina extends Component{
               </p>
             </div>
           </div>
-
         </Row>
         <div className="subtitle2" style={{margin:'0px', padding:'0px' }}>
           <h4 className="mainText1">El equipo</h4>
