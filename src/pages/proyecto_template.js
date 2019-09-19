@@ -191,14 +191,62 @@ class Template extends Component {
             También te podrían interesar
           </div>
         </Row>
-        <Row>
-          <div className="proyecto">
-            <img src={proyecto1}></img>
-            <img src={proyecto2}></img>
-            <img src={proyecto1}></img>
-            <img src={proyecto1}></img>
-          </div>
-        </Row>
+        <div style={{ padding: '4% 3% 2% 2%' }}>
+          <Row>
+            <Col md={6} xs={12} className="proyectoCards">
+              <Card bordered={false}>
+                <div className="proyecto">
+                  <img className="imgTemplate" src={proyecto1}></img>
+                  <div className="textTemplate">
+                    <p className="textTemplateP1">PLANIFICACIÓN</p>
+                    <p className="textTemplateP2">Plan</p>
+                    <p className="textTemplateP2">Maestro Urbano</p>
+                    <p className="textTemplateP2">de Portoviejo</p>
+                  </div>
+                </div>
+              </Card>
+            </Col>
+            <Col md={6} xs={12} className="proyectoCards">
+              <Card bordered={false}>
+                <div className="proyecto">
+                  <img className="imgTemplate" src={proyecto2}></img>
+                  <div className="textTemplate">
+                    <p className="textTemplateP1">PLANIFICACIÓN</p>
+                    <p className="textTemplateP2">Plan</p>
+                    <p className="textTemplateP2">Maestro Urbano</p>
+                    <p className="textTemplateP2">de Portoviejo</p>
+                  </div>
+                </div>
+              </Card>
+            </Col>
+            <Col md={6} xs={12} className="proyectoCards">
+              <Card bordered={false}>
+                <div className="proyecto">
+                  <img className="imgTemplate" src={proyecto1}></img>
+                  <div className="textTemplate">
+                    <p className="textTemplateP1">PLANIFICACIÓN</p>
+                    <p className="textTemplateP2">Plan</p>
+                    <p className="textTemplateP2">Maestro Urbano</p>
+                    <p className="textTemplateP2">de Portoviejo</p>
+                  </div>
+                </div>
+              </Card>
+            </Col>
+            <Col md={6} xs={12} className="proyectoCards">
+              <Card bordered={false}>
+                <div className="proyecto">
+                  <img className="imgTemplate" src={proyecto1}></img>
+                  <div className="textTemplate">
+                    <p className="textTemplateP1">PLANIFICACIÓN</p>
+                    <p className="textTemplateP2">Plan</p>
+                    <p className="textTemplateP2">Maestro Urbano</p>
+                    <p className="textTemplateP2">de Portoviejo</p>
+                  </div>
+                </div>
+              </Card>
+            </Col>
+          </Row>
+        </div>
         <Row>
           <div className="line">
             <img src={linea}></img>

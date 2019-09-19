@@ -38,8 +38,8 @@ class Contacto extends Component{
         <div className="contactoPanelMail">
           <div className="contactoMail">
             <div className="contactoEmail">
-              <p>Enter your mail</p>
-              <Input style={{ width: '94%' }}
+              <p className="contactoInput">Enter your mail</p>
+              <Input className="contactoInput" style={{ width: '94%' }}
               placeholder="Únete"/>
               <img style={{ width: '6%' }} src={flecha}>
               </img>

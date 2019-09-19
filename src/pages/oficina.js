@@ -94,12 +94,14 @@ class Oficina extends Component{
             </div>
           </div>
         </Row>
+        <Row>
         <div className="subtitle2" style={{margin:'0px', padding:'0px' }}>
           <h4 className="mainText1">El equipo</h4>
         </div>
         <div className="subtitle2" style={{margin:'0px', padding:'0px' }}>
           <p className="mainText2" style={{margin:'0px', padding:'0px' }}>CO-FUNDADORES</p>
         </div>
+        </Row>
         <div className="elEquipo">
         <div className="cardsOficina" style={{ padding: '10px' }}>
           <Row gutter={16}>
@@ -162,22 +164,50 @@ class Oficina extends Component{
         <Row gutter={16}>
           <Col md={6} xs={12}>
             <Card bordered={false}>
-              <img className="category" src={categoria1}></img>
+              <div className="category">
+                <img src={categoria1}></img>
+                <p className="textCategoryVertival">CATEGORIA 1</p>
+                <div className="textCategory">
+                  <p className="textCategoryP">Manta, 2018</p>
+                  <p><b>Planificación de la diversificación turística</b></p>
+                </div>
+              </div>
             </Card>
           </Col>
           <Col md={6} xs={12}>
             <Card bordered={false}>
-              <img className="category" src={categoria2}></img>
+              <div className="category">
+                <img src={categoria2}></img>
+                <p className="textCategoryVertival">CATEGORIA 1</p>
+                <div className="textCategory">
+                  <p className="textCategoryP">Manta, 2018</p>
+                  <p><b>Planificación de la diversificación turística</b></p>
+                </div>
+              </div>
             </Card>
           </Col>
           <Col md={6} xs={12}>
             <Card bordered={false}>
-              <img className="category" src={categoria3}></img>
+              <div className="category">
+                <img src={categoria3}></img>
+                <p className="textCategoryVertival">CATEGORIA 1</p>
+                <div className="textCategory">
+                  <p className="textCategoryP">Manta, 2018</p>
+                  <p><b>Planificación de la diversificación turística</b></p>
+                </div>
+              </div>
             </Card>
           </Col>
           <Col md={6} xs={12}>
             <Card bordered={false}>
-              <img className="category" src={categoria4}></img>
+              <div className="category">
+                <img src={categoria4}></img>
+                <p className="textCategoryVertival">CATEGORIA 1</p>
+                <div className="textCategory">
+                  <p className="textCategoryP">Manta, 2018</p>
+                  <p><b>Planificación de la diversificación turística</b></p>
+                </div>
+              </div>
             </Card>
           </Col>
         </Row>

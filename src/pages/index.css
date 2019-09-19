@@ -69,12 +69,6 @@
     .tree{
       width: 100%!important;
     }
-    .proyecto{
-      display:inline-block!important;
-    }
-    .proyecto img{
-      width: 50%!important;
-    }
     .galeria{
       display:inline-block!important;
     }
@@ -100,6 +94,7 @@
       margin-left: -13%!important;
       margin-right: 8%;
     }
+
     /*-----------oficina CSS------------*/
     .cardsOficina{
       margin-top: 20%!important;
@@ -114,6 +109,7 @@
     }
     .sentence p{
       font-size: 75%!important;
+      margin-top: 40px;
     }
     .minCard{
       margin-bottom: 60%!important;
@@ -127,34 +123,45 @@
       margin-top: -25%!important;
     }
 
-    .oficinaImg{
-      display: inline-block!important;
+    .oficinaImg img{
+      width: 100%!important;
     }
     .mainText3 p{
       width: 80%!important;
     }
+    .titleFloat{
+      min-height: 550px;
+      margin-top: 5%;
+      font-size: 115%!important;
+    }
+
     .parrafosFloat{
+      width: 80%!important;
       top: 10px!important;
       right: 5%!important;
-      left: 5%!important;
+      left: 8%!important;
       font-size: 75%!important;
+      text-align: justify;
     }
     .parrafosFloat2{
-      width: 150px!important;
-      top: 30%!important;
-      left: 3%!important;
+      width: 80%!important;
+      text-align: justify;
+      top: 95px!important;
+      left: 8%!important;
       font-size: 80%!important;
     }
     .parrafosFloat3{
-      width: 150px!important;
-      left: 60%!important;
+      width: 80%!important;
+      text-align: justify;
+      left: 8%!important;
       font-size: 80%!important;
-      bottom: 5%!important;
+      top: 205px!important;
     }
     .parrafosFloat4{
-      width: 150px!important;
-      top: 15%!important;
-      left: 65%!important;
+      width: 80%!important;
+      text-align: justify;
+      top: 315px!important;
+      left: 8%!important;
       font-size: 80%!important;
     }
     /*-----------contacto CSS------------*/
@@ -196,17 +203,13 @@
     /*-----------proyecto_general CSS------------*/
 
     .generalTabs{
-      font-size: 8px!important;
       width: 100%;
     }
     .generalTabs h3{
-      font-size: 13px!important;
+      font-size: 11px!important;
       display: flex;
       align-items: center;
       text-align: center;
-      border-bottom-style: solid;
-      border-width: 2px;
-      border-color: #EBEDEF ;
       padding-top: 2px;
       padding-bottom: 2px;
       padding-left: 5px;
@@ -215,6 +218,35 @@
       margin-bottom:10px!important;
     }
   }
+
+@media only screen and (max-width: 490px) {
+  .textTemplateP1{
+    font-size: 10px!important;
+    margin-bottom: 8px!important;
+  }
+  .textTemplateP2{
+    margin-bottom: -4px!important;
+    font-size: 15px!important;
+  }
+  .sentence p{
+    margin-top: 60px!important;
+  }
+  .category p{
+    font-size: 12px!important;
+  }
+  .textCategory{
+    width: 150px!important;
+  }
+/*-----------------oficina css----------------*/
+  .elEquipo{
+    margin-top: 12%!important;
+  }
+/*-----------------contacto css----------------*/
+  .contactoLocation{
+    margin-top: -7%!important;
+  }
+
+}
 /*-----------------Media Query----------------*/
 /*--------------------End---------------------*/
 
@@ -444,16 +476,29 @@
   vertical-align: middle;
   align-items: center;
   justify-content: center;
-  padding-top: 2%;
-  padding-bottom: 2%;
   margin-bottom: 0px;
 }
-.proyecto img{
-  position: relative;
-  width: 23%;
-  padding-left: 15px;
-  padding-right: 15px;
+.imgTemplate{
+  width: 80%;
+  box-shadow: 2px 30px 22px #D3D5D6;
 }
+.textTemplate{
+  position: absolute;
+  bottom: 13%;
+  left: 13%;
+}
+.textTemplateP1{
+  color:  white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.textTemplateP2{
+  color:  white;
+  font-size: 150%;
+  margin-bottom: -8px;
+}
+
 .footer{
   padding-top: 3%;
   padding-left: 6%;
@@ -534,6 +579,7 @@
 }
 .titleFloat{
   background-color: #EEF6F5;
+  margin-top: 5%;
 }
 .titleFloat2{
   margin-top: -5%;
@@ -541,7 +587,7 @@
 .oficinaImg{
   background-color: #EEF6F5;
   width: 100%;
-  display: flex !important;
+  display: flex;
   position: relative;
   vertical-align: middle;
   align-content: center !important;
@@ -615,7 +661,7 @@
   vertical-align: middle;
   justify-content: center;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: black;
 }
 .cardsOficina h3{
@@ -635,13 +681,13 @@
   font-family: 'Oxygen', sans-serif;
 }
 .mail{
-  font-size: 90%;
+  font-size: 14px;
 }
 .detail{
   text-align: inherit!important;
 }
 .small{
-  font-size: 12px!important;
+  font-size: 14px!important;
   padding-left: 2%;
   padding-right: 2%;
 }
@@ -709,6 +755,7 @@
   font-family: 'Oxygen', sans-serif;
   font-size: 27px;
   margin-top: 80px;
+  padding-left: 5px;
 }
 .category{
   width: 100%;
@@ -968,7 +1015,7 @@ padding-top: 30%;
   margin-bottom: -8px!important;
 }
 .contactoEmail p{
-  font-size: 10px;
+  font-size: 13px;
   margin-bottom: 20px;
 }
 .contactoMsj{
@@ -976,7 +1023,7 @@ padding-top: 30%;
   margin-left: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
-  font-size: 10px;
+  font-size: 13px;
   padding-right: 20px;
 }
 
@@ -1019,13 +1066,11 @@ padding-top: 30%;
   bottom: 12%;
   font-size: 15px;
   color:  white;
-  text-shadow: 3px 6px 5px black;
 
 }
 .textCategoryVertival{
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  text-shadow: 0px 0px 0px black !important;
   position: absolute;
   left: 8%;
   top: 7%;
@@ -1033,7 +1078,6 @@ padding-top: 30%;
   color:  white;
 }
 .textCategoryP{
-  text-shadow: 0px 0px 4px black !important;
   font-size: 12px!important;
 }
 
