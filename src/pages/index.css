@@ -182,13 +182,60 @@
     .contactoEmail p{
       margin-bottom: 4%!important;
     }
+    .contactoPanelMail{
+      display: none!important;
+    }
+    .contactoPanelMailNone{
+      display:block!important;
+      margin-top: 2%;
+      margin-left: 10%;
+      margin-right: 10%;
+      background-color: #394145;
+      border-radius: 18px;
+      color: white;
+      padding-top: 1px;
+      padding-bottom: 15px;
+      font-size: 12px;
+    }
+    .contactoEmailNone {
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      padding-bottom: 1%;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+    .contactoEmailNone img{
+      margin-bottom: -8px!important;
+    }
+    .contactoMsjNone{
+      margin-left: 15%;
+      margin-right: 15%;
+    }
     /*-----------noticias_template CSS------------*/
     .culturaDiv1{
-      width: 90%!important;
+      display: none;
+    }
+    .culturaDiv3{
+      display: none;
     }
     .culturaDiv2{
       width: 90%!important;
       margin-left: 5%!important;
+    }
+    .culturaDiv4{
+      display:block!important;
+      width: 90%!important;
+      margin-left: 5%!important;
+    }
+    .pNoticia{
+      text-align: justify;
+    }
+    .pieDeFoto{
+      display: block!important;
+      margin-bottom: 35px;
+      font-size: 12px!important;
     }
     .santana{
       max-width: 50%!important;
@@ -217,6 +264,19 @@
       margin-top: 10px!important;
       margin-bottom:10px!important;
     }
+    .tabPGeneral{
+      display: block!important;
+    }
+    .generalTabs{
+      display: none!important;
+    }
+    /*-----------Home CSS------------*/
+    .homeText{
+      font-size: 13px!important;
+    }
+    .homeMain{
+      height: 400px!important;
+    }
   }
 
 @media only screen and (max-width: 490px) {
@@ -244,6 +304,16 @@
 /*-----------------contacto css----------------*/
   .contactoLocation{
     margin-top: -7%!important;
+  }
+  .culturaSubtitle{
+    font-size: 12px;
+  }
+  .p1{
+    padding-top: 40%!important;
+  }
+  /*-----------------home css----------------*/
+  .homeMain{
+    max-height: 300px!important;
   }
 
 }
@@ -803,6 +873,9 @@
   background-size: cover;
   display: flex;
 }
+.pieDeFoto{
+  display: none;
+}
 .culturaDiv1{
  width: 28%;
  float: left;
@@ -819,7 +892,7 @@
   margin-top: -20px!important;
 }
 .culturaText1{
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   font-family: 'Oxygen', sans-serif;
 }
@@ -829,13 +902,13 @@
 }
 .culturaText2{
   padding-left: 30px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   font-family: 'Oxygen', sans-serif;
 }
 .culturaText3{
   padding-left: 30px;
-  font-size: 8px;
+  font-size: 11px;
   font-family: 'Oxygen', sans-serif;
   margin-bottom: 90px;
 }
@@ -844,10 +917,13 @@
   width: 38%;
   float: left;
   margin-bottom: 5%;
+  color: black;
 }
 .culturaDiv2 p{
-  font-size: 14px;
   font-family: 'Oxygen', sans-serif;
+}
+.pNoticia{
+  font-size: 14px;
 }
 .centronoticias{
   margin-bottom: 35px;
@@ -857,10 +933,13 @@
   width: 22%;
   float: left;
   margin-left: 30px;
-  margin-top: 60%;
+  margin-top: 560px;
   font-family: 'Oxygen', sans-serif;
   font-size: 85%;
   color: black;
+}
+.culturaDiv4{
+  display: none;
 }
 .culturaSubtitleImg{
   width: 100%;
@@ -988,6 +1067,9 @@ padding-top: 30%;
   margin-top: 5%;
   margin-bottom: 5%;
 }
+.contactoPanelMailNone{
+  display: none;
+}
 .contactoMail{
   display: flex;
   width: 90%;
@@ -1036,6 +1118,9 @@ padding-top: 30%;
     font-weight: 500;
     border-bottom-style:none!important;
 }
+.tabPGeneral{
+  display: none;
+}
 .generalTabs{
   display: flex;
   width: 100%;
@@ -1063,7 +1148,7 @@ padding-top: 30%;
   width: 200px;
   position: absolute;
   left: 8%;
-  bottom: 12%;
+  bottom: 9%;
   font-size: 15px;
   color:  white;
 
@@ -1089,7 +1174,7 @@ padding-top: 30%;
   -o-background-size: cover;
   background-size: cover;
   width: 100%!important;
-  height: 600px!important;
+  height: 600px;
   display: flex !important;
   position: relative;
   vertical-align:bottom;

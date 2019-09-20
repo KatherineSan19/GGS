@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
-import { Icon, Tabs, Card, Button, Row, Col, Menu } from 'antd';
+import { Icon, Tabs, Card, Row, Col, Menu } from 'antd';
 import principal from '../images/principal.jpg';
 import mapa from '../images/mapa.jpg';
 import carretera from '../images/carretera.png';

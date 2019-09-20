@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
-import { Icon, Tabs, Form, Input,Card, Row, Col, Menu, Dropdown} from 'antd';
+import { Icon,Card, Row, Col, Menu} from 'antd';
 import oficina from '../images/oficina.jpg';
 import gustavo from '../images/gustavo.jpg';
 import agustina from '../images/agustina.jpg';

@@ -1,9 +1,5 @@
 import React, {Component} from "react";
 import "./index.css";
-import { Icon,Card, Row, Col, Input } from 'antd';
-import 'antd/dist/antd.css';
-import homeImg from "../images/home.jpg";
-import logo from '../images/logo_ggs.jpg';
 
 
 class Home extends Component{

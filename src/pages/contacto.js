@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./index.css";
-import { Icon,Card, Row, Col, Input } from 'antd';
+import {Card, Row, Col, Input } from 'antd';
 import 'antd/dist/antd.css';
 import contacto from "../images/contacto.png";
 import mapa from "../images/contactoMapa.jpg";
@@ -47,6 +47,20 @@ class Contacto extends Component{
             <div className="contactoMsj">
             ¿Quiéres formar parte de nuestro equipo de colaboradores?
             </div>
+          </div>
+        </div>
+        <div className="contactoPanelMailNone">
+          <div className="contactoMailNone">
+            <div className="contactoEmailNone">
+              <p className="contactoInputNone">Enter your mail</p>
+              <Input className="contactoInput" style={{ width: '94%' }}
+              placeholder="Únete"/>
+              <img style={{ width: '6%' }} src={flecha}>
+              </img>
+            </div>
+          </div>
+          <div className="contactoMsjNone">
+          ¿Quiéres formar parte de nuestro equipo de colaboradores?
           </div>
         </div>
         <div className="subtitle2">
