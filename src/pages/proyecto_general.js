@@ -6,6 +6,8 @@ import categoria1 from '../images/cate1.jpg'
 import categoria2 from '../images/cate2.jpg'
 import categoria3 from '../images/cate3.jpg'
 import categoria4 from '../images/cate4.jpg'
+import Footer from "./footer";
+import NavBar from "./navBar";
 
 const { TabPane } = Tabs;
 
@@ -18,6 +20,7 @@ class General extends Component{
   render(){
     return(
       <div className="">
+        <NavBar/>
         <div className="generalTabs">
           <h3><a href="./noticias_template">Arquitectura</a></h3>
           <h3><a href="./noticias_template">Diseño Urbano</a></h3>
@@ -147,6 +150,9 @@ class General extends Component{
               </Card>
             </Col>
           </Row>
+        </div>
+        <div style={{padding: '35px 0px 0px 0px' }}>
+          <Footer/>
         </div>
       </div>
     );

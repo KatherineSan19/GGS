@@ -5,7 +5,6 @@ import oficina from '../images/oficina.jpg';
 import gustavo from '../images/gustavo.jpg';
 import agustina from '../images/agustina.jpg';
 import diego from '../images/diego.jpg';
-import logo from '../images/logo1.jpg';
 import plus from '../images/mas.png';
 import sentence from '../images/sentence.jpg'
 import comillas from '../images/comillas.jpg'
@@ -14,6 +13,8 @@ import categoria2 from '../images/categoria2.jpg'
 import categoria3 from '../images/categoria3.jpg'
 import categoria4 from '../images/categoria4.jpg'
 import imgFloat from '../images/oficina_float.jpg'
+import Footer from "./footer";
+import NavBar from "./navBar";
 import 'antd/dist/antd.css';
 const { Meta } = Card;
 const menu = (
@@ -27,30 +28,7 @@ class Oficina extends Component{
   render() {
     return (
       <div className="oficina">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></link>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <Row type="flex" justify="center" className="rowMenu">
-          <nav className="navbar fixed-top navbar-expand-md custom-navbar navbar-dark">
-            <img className="navbar-brand" src={logo} id="logo_custom" width="10%"  alt="logo"></img>
-            <button className="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span className="navbar-toggler-icon "></span>
-            </button>
-            <div className="collapse navbar-collapse " id="collapsibleNavbar">
-              <ul className="navbar-nav ml-auto ">
-                <li className="nav-item">
-                  <a className="nav-link" href="#offer"><b><Icon type="plus"  className="icon"/> Proyectos</b></a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#"><b><Icon type="plus"  className="icon"/> Oficina</b></a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#"><b>< Icon type="plus"  className="icon"/> Contacto</b></a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </Row>
+        <NavBar/>
         <Row>
           <div className="mainPicture">
             <img src={oficina}></img>
@@ -212,9 +190,8 @@ class Oficina extends Component{
           </Col>
         </Row>
       </div>
-      <div className="footer" style={{ marginBottom: '10px', marginTop: '17px' }}>
-        <p>This is a Website made by <b>Sundried</b></p>
-        <p>© Copyright 2019 GG + S All Rights Reserved</p>
+      <div style={{padding: '35px 0px 0px 0px' }}>
+        <Footer/>
       </div>
       </div>
     );

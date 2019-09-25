@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby";
 import "./index.css";
-
+import Main from "./main";
+import ReactDOM from "react-dom";
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"

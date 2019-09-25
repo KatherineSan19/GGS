@@ -9,12 +9,15 @@ import categoria1 from '../images/categoria11.jpg'
 import categoria2 from '../images/categoria2.jpg'
 import categoria3 from '../images/categoria3.jpg'
 import categoria4 from '../images/categoria4.jpg'
+import Footer from "./footer";
+import NavBar from "./navBar";
 
 class Contacto extends Component{
 
   render(){
     return(
       <div className="contacto">
+        <NavBar/>
         <div className="contactoImg">
           <img src={contacto}>
           </img>
@@ -89,6 +92,9 @@ class Contacto extends Component{
             </Card>
           </Col>
         </Row>
+      </div>
+      <div style={{padding: '35px 0px 0px 0px' }}>
+        <Footer/>
       </div>
       </div>
     );
