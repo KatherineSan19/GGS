@@ -32,8 +32,7 @@
   color: #A4CDCA!important;
 }
 #logo_custom{
-  width: 50%;
-  max-width: 95px;
+  width: 95px;
   }
 .rowMenu{
   width: 100%!important;
@@ -46,10 +45,6 @@
 
 @media only screen and (max-width: 765px) {
   /*-----------proyecto_template CSS------------*/
-    #logo_custom{
-      width: 20%;
-      padding-bottom: 5px;
-      }
     .optionalMenu{
         display:flex;
         float: right;
@@ -269,6 +264,20 @@
     .homeMain{
       height: 400px!important;
     }
+
+    .antes img{
+      height: 230px!important;
+    }
+    .despues img{
+      height: 230px!important;
+    }
+    .before{
+      margin: 0px!important;
+    }
+    .result1{
+      padding-left: 10px;
+    }
+
   }
 
 @media only screen and (max-width: 490px) {
@@ -311,6 +320,12 @@
   .footerIcon{
     font-size: 15px!important;
     margin-right: 5px!important;
+  }
+  .before{
+    font-size: 12px!important;
+  }
+  .result1{
+    padding-right: 1px;
   }
 
 }
@@ -464,8 +479,33 @@
   font-weight: 500;
   padding-bottom: 2%;
 }
+ .before{
+   transform: rotate(270deg);
+   font-size: 14px;
+   letter-spacing: 2px;
+ }
 
-
+.antes{
+  padding-right: 0px!important;
+  max-width: 600px;
+  padding-top: 15px;
+  margin-right: 0px;
+}
+.antes img{
+  width: 100%;
+  height: 330px;
+}
+.despues{
+  max-width: 600px;
+  border-left-style: solid;
+  border-left-width: thin;
+  padding-left: 8px!important;
+  padding-top: 20px;
+}
+.despues img{
+  width: 100%;
+  height: 350px;
+}
 .subtitle{
   display: flex;
   width: 100%;

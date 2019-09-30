@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
-import { Icon,Card, Row, Col, Menu} from 'antd';
+import { Card, Row, Col} from 'antd';
 import oficina from '../images/oficina.jpg';
 import gustavo from '../images/gustavo.jpg';
 import agustina from '../images/agustina.jpg';
@@ -14,21 +14,13 @@ import categoria3 from '../images/categoria3.jpg'
 import categoria4 from '../images/categoria4.jpg'
 import imgFloat from '../images/oficina_float.jpg'
 import Footer from "./footer";
-import NavBar from "./navBar";
 import 'antd/dist/antd.css';
 const { Meta } = Card;
-const menu = (
-  <Menu>
-    <Menu.Item key="0">
-  Hola
-  </Menu.Item>
-  </Menu>
-);
+
 class Oficina extends Component{
   render() {
     return (
       <div className="oficina">
-        <NavBar/>
         <Row>
           <div className="mainPicture">
             <img src={oficina}></img>

@@ -8,14 +8,13 @@ import centronoticias from '../images/centronoticias.jpg';
 import flecha from '../images/flecha.jpg';
 import panel from '../images/panel.jpg';
 import Footer from "./footer";
-import NavBar from "./navBar";
+
 
 
 class Noticias extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
         <div className="noticias">
           <h3 className="cultura">
             CULTURA

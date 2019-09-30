@@ -1,23 +1,27 @@
-import React from "react"
-import { Link } from "gatsby";
-import "./index.css";
-import Main from "./main";
-import ReactDOM from "react-dom";
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import React, {Component} from "react";
+import {  BrowserRouter, Router, Route, Switch, HashRouter} from "react-router-dom";
+import 'antd/dist/antd.css';
+import Home from "./home";
+import ProyectosComponet from "./proyectos";
+import TemplateComponet from "./proyecto_template";
+import OficinaComponet from "./oficina";
+import NoticiasComponet from "./noticias_template";
+import ContactoComponet from "./contacto";
+import NavBar from "./navBar";
+class Main extends Component {
+  render(){
+    return(
+      <HashRouter>
+        <NavBar/>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/proyectos" component={ProyectosComponet} />
+          <Route exact path="/template" component={TemplateComponet} />
+          <Route path="/oficina" component={OficinaComponet} />
+          <Route path="/noticias" component={NoticiasComponet} />
+          <Route path="/contacto" component={ContactoComponet} />
+      </HashRouter>
+    );
+  }
+}
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
-
-export default IndexPage
+export default Main;

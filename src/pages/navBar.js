@@ -1,11 +1,17 @@
 import React, { Component } from "react";
+import {  Link} from "react-router-dom";
 import "./index.css";
 import logo from '../images/logo_ggs.jpg';
-import { Icon, Row, Col, Menu } from 'antd';
+import { Icon, Row, Menu } from 'antd';
 import 'antd/dist/antd.css';
 const { SubMenu } = Menu;
 
 class NavBar extends Component {
+
+  handleClick=(e)=>{
+  console.log('click', e);
+  }
+
   render() {
     return (
       <div>
@@ -14,14 +20,14 @@ class NavBar extends Component {
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <Row type="flex" justify="center" className="rowMenu">
           <nav className="navbar fixed-top navbar-expand-md custom-navbar navbar-dark">
-            <img className="navbar-brand" src={logo} id="logo_custom" width="10%"  alt="logo"></img>
+            <Link to="/"><img className="navbar-brand" src={logo} id="logo_custom" width="10%"  alt="logo"></img></Link>
             <div className="optionalMenu">
               <Menu onClick={this.handleClick} style={{ width: 56, height:46 }} mode="vertical">
                 <SubMenu key="sub1" title={<span><Icon type="menu" /></span> }>
                   <Menu.ItemGroup title="Menú">
-                    <Menu.Item key="1"><a href="./proyecto_general"><Icon type="plus"  className="icon"/> Proyectos</a></Menu.Item>
-                    <Menu.Item key="1"><a href="./oficina"><Icon type="plus"  className="icon"/> Oficina</a></Menu.Item>
-                    <Menu.Item key="1"><a href="./contacto"><Icon type="plus"  className="icon"/> Contacto</a></Menu.Item>
+                    <Menu.Item key="1"><Link to="/proyectos"><Icon type="plus"  className="icon"/> Proyectos</Link></Menu.Item>
+                    <Menu.Item key="2"><Link to="/oficina"><Icon type="plus"  className="icon"/> Oficina</Link></Menu.Item>
+                    <Menu.Item key="3"><Link to="/contacto"><Icon type="plus"  className="icon"/> Contacto</Link></Menu.Item>
                   </Menu.ItemGroup>
                 </SubMenu>
               </Menu>
@@ -29,13 +35,13 @@ class NavBar extends Component {
             <div className="collapse navbar-collapse " id="collapsibleNavbar">
               <ul className="navbar-nav ml-auto ">
                 <li className="nav-item">
-                  <a className="nav-link" href="./proyecto_general"><b><Icon type="plus"  className="icon"/> Proyectos</b></a>
+                  <Link className="nav-link" to="/proyectos"><b><Icon type="plus"  className="icon"/> Proyectos</b></Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="./oficina"><b><Icon type="plus"  className="icon"/> Oficina</b></a>
+                  <Link className="nav-link" to="./oficina"><b><Icon type="plus"  className="icon"/> Oficina</b></Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="./contacto"><b>< Icon type="plus"  className="icon"/> Contacto</b></a>
+                  <Link className="nav-link" to="./contacto"><b>< Icon type="plus"  className="icon"/> Contacto</b></Link>
                 </li>
               </ul>
             </div>

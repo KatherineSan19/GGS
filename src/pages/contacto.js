@@ -10,14 +10,12 @@ import categoria2 from '../images/categoria2.jpg'
 import categoria3 from '../images/categoria3.jpg'
 import categoria4 from '../images/categoria4.jpg'
 import Footer from "./footer";
-import NavBar from "./navBar";
 
 class Contacto extends Component{
 
   render(){
     return(
       <div className="contacto">
-        <NavBar/>
         <div className="contactoImg">
           <img src={contacto}>
           </img>

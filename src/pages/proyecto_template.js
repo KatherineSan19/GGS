@@ -7,6 +7,8 @@ import carretera from '../images/carretera.png';
 import logo from '../images/logo_ggs.jpg';
 import arbol1 from '../images/arbol1.jpg';
 import arbol2 from '../images/arbol2.jpg';
+import antes from '../images/antes.jpg';
+import despues from '../images/despues.jpg';
 import centro from '../images/centro.jpg';
 import galeria1 from '../images/galeria1.jpg';
 import galeria2 from '../images/galeria2.jpg';
@@ -21,11 +23,9 @@ import proyecto2 from '../images/proyecto2.jpg';
 import linea from '../images/linea.jpg';
 import liston from '../images/liston.jpg';
 import Footer from "./footer";
-import NavBar from "./navBar";
 import 'antd/dist/antd.css';
 
 const { TabPane } = Tabs;
-const { SubMenu } = Menu;
 
 
 class Template extends Component {
@@ -35,14 +35,9 @@ class Template extends Component {
     console.log(key);
   }
 
-  handleClick=(e)=>{
-  console.log('click', e);
-  }
-
   render() {
     return (
       <div className="">
-        <NavBar/>
         <Row>
           <div className="proyectotemplateImage">
             <img src={principal}></img>
@@ -120,11 +115,18 @@ class Template extends Component {
         <Row>
           <div className="result">
             <div className="result1">
-              <Col span={24}>
+              <p  className="before">ANTES</p>
+              <Col span={12} className=" antes">
                 <Card bordered={false}>
-                  <img className="before" src={centro}></img>
+                  <img src={antes}></img>
                 </Card>
               </Col>
+              <Col span={12} className=" despues">
+                <Card bordered={false}>
+                  <img src={despues}></img>
+                </Card>
+              </Col>
+              <p className="before">DESPUÉS</p>
             </div>
           </div>
         </Row>

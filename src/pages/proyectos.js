@@ -2,12 +2,14 @@ import React, {Component} from "react";
 import "./index.css";
 import { Card,Tabs, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
+import { BrowserRouter } from "react-router-dom";
+import {  BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import "./index.css";
 import categoria1 from '../images/cate1.jpg'
 import categoria2 from '../images/cate2.jpg'
 import categoria3 from '../images/cate3.jpg'
 import categoria4 from '../images/cate4.jpg'
 import Footer from "./footer";
-import NavBar from "./navBar";
 
 const { TabPane } = Tabs;
 
@@ -20,18 +22,17 @@ class General extends Component{
   render(){
     return(
       <div className="">
-        <NavBar/>
+
         <div className="generalTabs">
-          <h3><a href="./noticias_template">Arquitectura</a></h3>
-          <h3><a href="./noticias_template">Diseño Urbano</a></h3>
-          <h3><a href="./noticias_template">Paisaje</a></h3>
-          <h3><a href="./noticias_template">Planificación Territorial</a></h3>
-          <h3><a href="./noticias_template">Planificación Estratégica</a></h3>
+          <h3><Link to="./noticias">Arquitectura</Link></h3>
+          <h3><Link to="./noticias">Diseño Urbano</Link></h3>
+          <h3><Link to="./noticias">Paisaje</Link></h3>
+          <h3><Link to="./noticias">Planificación Territorial</Link></h3>
+          <h3><Link to="./noticias">Planificación Estratégica</Link></h3>
         </div>
         <div className="tabPGeneral">
           <Tabs defaultActiveKey="1" onChange={this.callback}>
             <TabPane tab="Arquitectura" key="1">
-
             </TabPane>
             <TabPane tab="Diseño Urbano" key="2">
 
@@ -42,7 +43,7 @@ class General extends Component{
             <TabPane tab="Planificación Territorial" key="4">
 
             </TabPane>
-            <TabPane tab="Planificacion Estratégica" key="4">
+            <TabPane tab="Planificacion Estratégica" key="5">
 
             </TabPane>
           </Tabs>
@@ -52,7 +53,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria1}></img>
+                  <Link to="/template"><img src={categoria1}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
@@ -64,7 +65,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria2}></img>
+                  <Link to="/template"><img src={categoria2}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
@@ -76,7 +77,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria3}></img>
+                  <Link to="/template"><img src={categoria3}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
@@ -88,7 +89,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria4}></img>
+                  <Link to="/template"><img src={categoria4}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
@@ -104,7 +105,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria1}></img>
+                  <Link to="/template"><img src={categoria1}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
@@ -116,7 +117,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria2}></img>
+                  <Link to="/template"><img src={categoria2}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
@@ -128,7 +129,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria3}></img>
+                  <Link to="/template"><img src={categoria3}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
@@ -140,7 +141,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <img src={categoria4}></img>
+                  <Link to="/template"><img src={categoria4}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA 1</p>
                   <div className="textCategory">
                     <p className="textCategoryP">Manta, 2018</p>
