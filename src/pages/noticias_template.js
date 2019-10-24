@@ -8,19 +8,35 @@ import centronoticias from '../images/centronoticias.jpg';
 import flecha from '../images/flecha.jpg';
 import panel from '../images/panel.jpg';
 import Footer from "./footer";
+import RestClient from '../network/restClient';
 
 
 
-class Noticias extends Component {
+class Noticia extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      noticia: undefined
+    }
+  }
+
+  componentDidMount(){
+    RestClient.getNoticias().then(response=>{
+      this.setState({noticia:response.noticia});
+    }).catch(error=>{
+      console.log(error);
+    })
+  }
   render() {
     return (
       <div>
+      {this.state.noticia!=undefined &&
         <div className="noticias">
           <h3 className="cultura">
-            CULTURA
+          {this.state.noticia.titulo}
           </h3>
           <h3 className="culturaText">
-            lorem ipsum dolor sit amet
+          {this.state.noticia.subtitulo}
           </h3>
           <div className="culturaImg">
             <img src={cultura}></img>
@@ -33,8 +49,8 @@ class Noticias extends Component {
               </div>
               <div className="agustinaSantana">
                 <img className="santana" src={agustinaSantana}></img>
-                <p className="culturaText1"><img style={{ width: '20px' }} src={flecha} ></img> POR AUGUSTINA SANTANA</p>
-                <p className="culturaText2">asantana@ggsarquitectos.com</p>
+                <p className="culturaText1"><img style={{ width: '20px' }} src={flecha} ></img> POR {this.state.noticia.nombre} {this.state.noticia.apellido}</p>
+                <p className="culturaText2">{this.state.noticia.correo}</p>
                 <p className="culturaText3">Publicado Julio 2019</p>
               </div>
               <h3 className="masNoticias">más noticias</h3>
@@ -51,27 +67,27 @@ class Noticias extends Component {
               <div className="culturaSubtitleImg">
                 <img className="panel" src={panel}></img>
                 <div className="culturaSubtitle">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim pharetra eros non elementum. Nam pulvinar eu ex in ultricies. Pellentesque in aliquam turpis.
+                  {this.state.noticia.titulo2}
                 </div>
               </div>
               <div className="p1">
                 <p className="pNoticia">
-                Vivamus cursus ipsum dignissim metus auctor, a aliquet turpis placerat. Sed sodales lectus sed ultrices bibendum. Vestibulum sollicitudin lectus ac lectus venenatis dictum. Nam sed condimentum tortor. lobortis ullamcorper, nisl augue porta felis, rutrum accumsan enim augue non diam
+                  {this.state.noticia.html}
                 </p>
-                <p className="pNoticia">Mauris venenatis lobortis dolor in eleifend. Mauris ultrices vitae metus quis gravida. Curabitur laoreet dui non lacus porttitor, blandit maximus neque viverra. Curabitur nec tempus quam, non posuere felis. Aliquam vel libero erat. Nam hendrerit quam nunc.
+                <p className="pNoticia">
                 </p>
                 <img className="centronoticias" src={centronoticias}></img>
                 <div className="pieDeFoto">
-                <p><b>Pie de Foto. </b></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p><b>{this.state.noticia.pie_foto}</b></p>
+                <p>{this.state.noticia.pie_foto_text}</p>
                 </div>
-                <p className="pNoticia">Proin consectetur dignissim mauris, ac fermentum metus venenatis eu. Donec aliquet erat sed lobortis dictum. Maecenas imperdiet quam eget erat scelerisque, vel dictum justo vestibulum. Donec mattis purus ipsum, ut tempus ligula scelerisque nec. Curabitur in elit luctus, hendrerit sapien tempor, placerat purus. Phasellus tempus ante a nisi interdum convallis non facilisis purus. Quisque tristique laoreet velit eget volutpat. Maecenas vitae metus tellus. Nam luctus tempor justo, non sagittis odio porttitor ut. In elementum in nisi gravida dictum. Proin feugiat vel augue non aliquet. Nunc a luctus neque. Vivamus eros odio, tempor at magna sit amet, vestibulum gravida felis. Donec et lectus mi. Nunc nec vestibulum diam. Curabitur ultrices tempor enim ac vestibulum.
+                <p className="pNoticia">
                 </p>
               </div>
               </div>
             <div className="culturaDiv3">
-              <p><b>Pie de Foto. </b></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p><b>{this.state.noticia.pie_foto}</b></p>
+              <p>{this.state.noticia.pie_foto_text}</p>
             </div>
             <div className="culturaDiv4">
               <div className="noticiasIcons">
@@ -80,8 +96,8 @@ class Noticias extends Component {
               </div>
               <div className="agustinaSantana">
                 <img className="santana" src={agustinaSantana}></img>
-                <p className="culturaText1"><img style={{ width: '20px' }} src={flecha} ></img> POR AUGUSTINA SANTANA</p>
-                <p className="culturaText2">asantana@ggsarquitectos.com</p>
+                <p className="culturaText1"><img style={{ width: '20px' }} src={flecha} ></img> POR {this.state.noticia.nombre} {this.state.noticia.apellido}</p>
+                <p className="culturaText2">{this.state.noticia.correo}</p>
                 <p className="culturaText3">Publicado Julio 2019</p>
               </div>
               <h3 className="masNoticias">más noticias</h3>
@@ -99,8 +115,9 @@ class Noticias extends Component {
             <Footer/>
           </div>
         </div>
+      }
       </div>
     );
   }
 }
-export default Noticias;
+export default Noticia;

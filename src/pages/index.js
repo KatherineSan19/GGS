@@ -17,7 +17,7 @@ class Main extends Component {
           <Route exact path="/proyectos" component={ProyectosComponet} />
           <Route exact path="/template" component={TemplateComponet} />
           <Route path="/oficina" component={OficinaComponet} />
-          <Route path="/noticias" component={NoticiasComponet} />
+          <Route path="/noticia" component={NoticiasComponet} />
           <Route path="/contacto" component={ContactoComponet} />
       </HashRouter>
     );

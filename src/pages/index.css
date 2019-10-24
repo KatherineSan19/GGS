@@ -307,7 +307,7 @@
     margin-top: -7%!important;
   }
   .culturaSubtitle{
-    font-size: 12px;
+    font-size: 12px!important;
   }
   .p1{
     padding-top: 40%!important;
@@ -972,6 +972,7 @@
 }
 .pNoticia{
   font-size: 14px;
+  text-align: justify;
 }
 .centronoticias{
   margin-bottom: 35px;
@@ -983,7 +984,7 @@
   margin-left: 30px;
   margin-top: 560px;
   font-family: 'Oxygen', sans-serif;
-  font-size: 85%;
+  font-size: 12px;
   color: black;
 }
 .culturaDiv4{
@@ -1005,6 +1006,7 @@
   font-family: 'Oxygen', sans-serif;
   font-weight: 600;
   color: black;
+  font-size: 15px;
 }
 .p1{
 padding-top: 30%;

@@ -15,9 +15,26 @@ import categoria4 from '../images/categoria4.jpg'
 import imgFloat from '../images/oficina_float.jpg'
 import Footer from "./footer";
 import 'antd/dist/antd.css';
+import RestClient from '../network/restClient';
 const { Meta } = Card;
 
 class Oficina extends Component{
+
+  constructor(props){
+    super(props);
+    this.state={
+      equipo: undefined
+    }
+  }
+
+  componentDidMount(){
+    RestClient.getEquipo().then(response=>{
+      this.setState({equipo:response.equipo});
+    }).catch(error=>{
+      console.log(error);
+    })
+  }
+
   render() {
     return (
       <div className="oficina">

@@ -10,8 +10,23 @@ import categoria2 from '../images/categoria2.jpg'
 import categoria3 from '../images/categoria3.jpg'
 import categoria4 from '../images/categoria4.jpg'
 import Footer from "./footer";
+import RestClient from '../network/restClient';
 
-class Contacto extends Component{
+class Contacto extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      contacto: undefined
+    }
+  }
+
+  componentDidMount(){
+    RestClient.getContacto().then(response=>{
+      this.setState({contacto:response.contacto});
+    }).catch(error=>{
+      console.log(error);
+    })
+  }
 
   render(){
     return(
@@ -24,16 +39,18 @@ class Contacto extends Component{
           <div className="contactoMap">
             <img src={mapa}>
             </img>
-            <div className="contactoPortoviejo">
-              <h3>PORTOVIEJO</h3>
-              <p>Edificio Bupa, Oficina 401 </p>
-              <p>Cdla. Universitaria Av. U2 y Calle 10 </p>
-              <p><b>Manta, Ecuador</b></p>
-              <p className="contactoP">
-                admin@ggsarquitectos.com
-              </p>
-              <p>Tel. (+593) 35 35 36 31</p>
-            </div>
+            {this.state.contacto!=undefined &&
+              <div className="contactoPortoviejo">
+                <h3>{this.state.contacto.ubicacion}</h3>
+                <p>{this.state.contacto.direccion}</p>
+                <p><b>{this.state.contacto.ciudad}, {this.state.contacto.pais}</b></p>
+                <p className="contactoP">
+                  {this.state.contacto.correo}
+                </p>
+                <p>Tel. {this.state.contacto.telefono}</p>
+              </div>
+            }
+
           </div>
         </div>
         <div className="contactoPanelMail">

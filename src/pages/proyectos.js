@@ -24,11 +24,11 @@ class General extends Component{
       <div className="">
 
         <div className="generalTabs">
-          <h3><Link to="./noticias">Arquitectura</Link></h3>
-          <h3><Link to="./noticias">Diseño Urbano</Link></h3>
-          <h3><Link to="./noticias">Paisaje</Link></h3>
-          <h3><Link to="./noticias">Planificación Territorial</Link></h3>
-          <h3><Link to="./noticias">Planificación Estratégica</Link></h3>
+          <h3><Link to="./noticia">Arquitectura</Link></h3>
+          <h3><Link to="./noticia">Diseño Urbano</Link></h3>
+          <h3><Link to="./noticia">Paisaje</Link></h3>
+          <h3><Link to="./noticia">Planificación Territorial</Link></h3>
+          <h3><Link to="./noticia">Planificación Estratégica</Link></h3>
         </div>
         <div className="tabPGeneral">
           <Tabs defaultActiveKey="1" onChange={this.callback}>

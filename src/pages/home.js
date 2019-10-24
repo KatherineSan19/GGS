@@ -1,15 +1,34 @@
 import React, {Component} from "react";
 import "./index.css";
 import Footer from "./footer";
+import RestClient from '../network/restClient';
 
 
 class Home extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      home: undefined
+    }
+  }
+
+  componentDidMount(){
+    RestClient.getHome().then(response=>{
+      this.setState({home:response.home});
+    }).catch(error=>{
+      console.log(error);
+    })
+  }
+
   render(){
     return(
       <div>
         <div className="homeMain">
-        <p className="homeText"> Somos una firma de diseño y planificación que busca armonizar los asentamietos humanos con los sistemas naturales.
-        </p>
+        {this.state.home!=undefined &&
+          <p className="homeText">{this.state.home.html}
+          </p>
+        }
         </div>
         <div style={{padding: '15px 0px 0px 0px' }}>
           <Footer/>
