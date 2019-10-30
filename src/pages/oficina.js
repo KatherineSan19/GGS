@@ -8,13 +8,11 @@ import diego from '../images/diego.jpg';
 import plus from '../images/mas.png';
 import sentence from '../images/sentence.jpg'
 import comillas from '../images/comillas.jpg'
-import categoria1 from '../images/categoria11.jpg'
-import categoria2 from '../images/categoria2.jpg'
-import categoria3 from '../images/categoria3.jpg'
-import categoria4 from '../images/categoria4.jpg'
+import categoria2 from '../images/categoria2.jpg';
 import imgFloat from '../images/oficina_float.jpg'
 import Footer from "./footer";
 import 'antd/dist/antd.css';
+import {  BrowserRouter as Router, Link} from "react-router-dom";
 import RestClient from '../network/restClient';
 const { Meta } = Card;
 
@@ -25,11 +23,21 @@ class Oficina extends Component{
     this.state={
       equipo: undefined
     }
+    super(props);
+    this.state={
+      galeria: undefined
+    }
   }
 
   componentDidMount(){
     RestClient.getEquipo().then(response=>{
       this.setState({equipo:response.equipo});
+    }).catch(error=>{
+      console.log(error);
+    })
+
+    RestClient.getMasProyectos({size:4}).then(response=>{
+      this.setState({galeria:response.galeria});
     }).catch(error=>{
       console.log(error);
     })
@@ -91,50 +99,26 @@ class Oficina extends Component{
         </Row>
         <div className="elEquipo">
         <div className="cardsOficina" style={{ padding: '10px' }}>
+          {this.state.equipo!=undefined &&
           <Row gutter={16}>
-            <Col md={8} xs={24} className="minCard">
+            {this.state.equipo.map((item) =>
+            <Col md={8} xs={24} key={item.id}className="minCard">
               <Card bordered={false}
                 style={{ width: '80%', margin:20 }}
-                cover={<div className="divPictureDetail"><img className="pictureDetail" src={gustavo}/></div>}>
-                <h4>GUSTAVO</h4>
-                <h3>Gonzáles</h3>
-                <p className="mail"><b>ggonzález@ggsarquitectos.com</b></p>
-                <p className="small studies">Máster en Paisaje y Plani cación Ambiental</p>
-                <p className="detail small">Realizó estudios de maestría en Arquitectura del Paisaje y Planificación Ambiental en la Universidad Berkeley.</p>
+                cover={<div className="divPictureDetail"><img className="pictureDetail" src={item.img_integrante}/></div>}>
+                <h4>{item.nombre}</h4>
+                <h3>{item.apellido}</h3>
+                <p className="mail"><b>{item.correo}</b></p>
+                <p className="small studies">{item.profesion}</p>
+                <p className="detail small">{item.html}</p>
                 <div className="plusDiv"><img className="plus" src={plus}></img>
                 </div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
-            <Col md={8} xs={24} className="minCard">
-              <Card bordered={false}
-                style={{ width: '80%', margin:20 }}
-                cover={<div className="divPictureDetail"><img className="pictureDetail" src={agustina}/></div>}>
-                <h4>AGUSTINA</h4>
-                <h3>Santana</h3>
-                <p className="mail"><b>asantana@ggsarquitectos.com</b></p>
-                <p className="small studies">Máster en Arquitectura y Diseño Urbano</p>
-                <p className="detail small">Realizó  estudios de maestria en Arquitectura y Diseño Urbano en la Universidad de Columbia, Nueva York.</p>
-                <div className="plusDiv"><img className="plus" src={plus}></img></div>
-                <p className="detailFooter">OBJETO FAVORITO</p>
-              </Card>
-            </Col>
-            <Col md={8} xs={24} className="minCard">
-              <Card bordered={false}
-                style={{ width: '80%', margin:20 }}
-                cover={<div className="divPictureDetail"><img className="pictureDetail" src={diego}/></div>}>
-                <h4>DIEGO</h4>
-                <h3>Solano</h3>
-                <p className="mail"><b>darleada@ggsarquitectos.com</b></p>
-                <p className="small studies">Máster en Paisaje y Plani cación Ambiental</p>
-                <p className="detail small">Obtuvo su título de Arquitectura en la Universidad Católica de Guayaquil. Realizó  estudio  de maestría (...)</p>
-                <div className="plusDiv">
-                <img className="plus" src={plus}></img>
-                </div>
-                <p className="detailFooter">OBJETO FAVORITO</p>
-              </Card>
-            </Col>
+            )}
           </Row>
+          }
         </div>
         </div>
         <Row>
@@ -147,58 +131,26 @@ class Oficina extends Component{
         <div className="subtitle2">
           <h4 className="mainText1">Algunos Proyectos</h4>
         </div>
+        {this.state.galeria!=undefined &&
         <div style={{padding: '0px', margin: '0px', width:'99.4%' }}>
         <Row gutter={16}>
+          {this.state.galeria.map((item) =>
           <Col md={6} xs={12}>
             <Card bordered={false}>
               <div className="category">
-                <img src={categoria1}></img>
-                <p className="textCategoryVertival">CATEGORIA 1</p>
+                <Link to="/template"><img src={item.url_img}></img></Link>
+                <p className="textCategoryVertival">CATEGORIA  {item.categoria}</p>
                 <div className="textCategory">
-                  <p className="textCategoryP">Manta, 2018</p>
-                  <p><b>Planificación de la diversificación turística</b></p>
+                  <p className="textCategoryP">{item.ciudad}, 2018</p>
+                  <p><b>{item.titulo}</b></p>
                 </div>
               </div>
             </Card>
           </Col>
-          <Col md={6} xs={12}>
-            <Card bordered={false}>
-              <div className="category">
-                <img src={categoria2}></img>
-                <p className="textCategoryVertival">CATEGORIA 1</p>
-                <div className="textCategory">
-                  <p className="textCategoryP">Manta, 2018</p>
-                  <p><b>Planificación de la diversificación turística</b></p>
-                </div>
-              </div>
-            </Card>
-          </Col>
-          <Col md={6} xs={12}>
-            <Card bordered={false}>
-              <div className="category">
-                <img src={categoria3}></img>
-                <p className="textCategoryVertival">CATEGORIA 1</p>
-                <div className="textCategory">
-                  <p className="textCategoryP">Manta, 2018</p>
-                  <p><b>Planificación de la diversificación turística</b></p>
-                </div>
-              </div>
-            </Card>
-          </Col>
-          <Col md={6} xs={12}>
-            <Card bordered={false}>
-              <div className="category">
-                <img src={categoria4}></img>
-                <p className="textCategoryVertival">CATEGORIA 1</p>
-                <div className="textCategory">
-                  <p className="textCategoryP">Manta, 2018</p>
-                  <p><b>Planificación de la diversificación turística</b></p>
-                </div>
-              </div>
-            </Card>
-          </Col>
+          )}
         </Row>
       </div>
+      }
       <div style={{padding: '35px 0px 0px 0px' }}>
         <Footer/>
       </div>

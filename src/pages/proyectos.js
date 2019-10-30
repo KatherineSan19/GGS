@@ -10,10 +10,19 @@ import categoria2 from '../images/cate2.jpg'
 import categoria3 from '../images/cate3.jpg'
 import categoria4 from '../images/cate4.jpg'
 import Footer from "./footer";
+import RestClient from '../network/restClient';
 
 const { TabPane } = Tabs;
 
 class General extends Component{
+
+  constructor(props){
+    super(props);
+    this.state={
+      proyectos: undefined
+    }
+  }
+
 
   callback=(key)=>{
     console.log(key);

@@ -67,5 +67,25 @@ export default class RestClientObj {
       .get('/equipo')
       .then(response => response.data)
   }
+  // static getGaleria2 = (data) => {
+  //   return RestClientObj.instanceAxios
+  //     .post('/galeria',data)
+  //     .then(response => response.data)
+  // }
+  static getMasProyectos = (id) => {
+    return RestClientObj.instanceAxios
+      .get('/mas_proyectos')
+      .then(response => response.data)
+  }
+  static getProyectos = (id) => {
+    return RestClientObj.instanceAxios
+      .get('/proyectos')
+      .then(response => response.data)
+  }
+  static getProyecto = (id) => {
+    return RestClientObj.instanceAxios
+      .get('/proyecto')
+      .then(response => response.data)
+  }
 
 }

@@ -24,12 +24,19 @@ import linea from '../images/linea.jpg';
 import liston from '../images/liston.jpg';
 import Footer from "./footer";
 import 'antd/dist/antd.css';
+import RestClient from '../network/restClient';
 
 const { TabPane } = Tabs;
 
 
 class Template extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      proyecto: undefined
+    }
+  }
 
   callback=(key)=>{
     console.log(key);
