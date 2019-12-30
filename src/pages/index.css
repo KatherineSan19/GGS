@@ -540,6 +540,19 @@
   margin-bottom: 0px;
 }
 
+.galeriaProyectoImg{
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+}
+.galeriaProyectoImg img{
+  margin-bottom: 0px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
 .galeria2{
   width: 100%;
   display: flex;

@@ -10,8 +10,6 @@ import panel from '../images/panel.jpg';
 import Footer from "./footer";
 import RestClient from '../network/restClient';
 
-
-
 class Noticia extends Component{
   constructor(props){
     super(props);
@@ -21,7 +19,8 @@ class Noticia extends Component{
   }
 
   componentDidMount(){
-    RestClient.getNoticias().then(response=>{
+    console.log(this.props)
+    RestClient.getNoticia(this.props.match.params.id_noticia).then(response=>{
       this.setState({noticia:response.noticia});
     }).catch(error=>{
       console.log(error);
@@ -29,18 +28,19 @@ class Noticia extends Component{
   }
   render() {
     return (
+      
       <div>
       {this.state.noticia!=undefined &&
         <div className="noticias">
           <h3 className="cultura">
-          {this.state.noticia.titulo}
-          </h3>
+          {this.state.noticia.titulo}</h3>
           <h3 className="culturaText">
           {this.state.noticia.subtitulo}
           </h3>
           <div className="culturaImg">
-            <img src={cultura}></img>
+            <img src={this.state.noticia.img_noticia}></img>
           </div>
+
           <Row>
             <div className="culturaDiv1">
               <div className="noticiasIcons">
@@ -52,6 +52,7 @@ class Noticia extends Component{
                 <p className="culturaText1"><img style={{ width: '20px' }} src={flecha} ></img> POR {this.state.noticia.nombre} {this.state.noticia.apellido}</p>
                 <p className="culturaText2">{this.state.noticia.correo}</p>
                 <p className="culturaText3">Publicado Julio 2019</p>
+
               </div>
               <h3 className="masNoticias">más noticias</h3>
               <div className="culturaContent">
@@ -115,7 +116,7 @@ class Noticia extends Component{
             <Footer/>
           </div>
         </div>
-      }
+        }
       </div>
     );
   }

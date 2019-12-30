@@ -25,31 +25,47 @@ import liston from '../images/liston.jpg';
 import Footer from "./footer";
 import 'antd/dist/antd.css';
 import RestClient from '../network/restClient';
+import ReactHtmlParser from 'react-html-parser';
 
 const { TabPane } = Tabs;
-
 
 class Template extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      proyecto: undefined
+      proyecto: undefined,
+      galerias: []
     }
   }
-
   callback=(key)=>{
     console.log(key);
   }
+  componentDidMount(){
+    RestClient.getGalerias().then(response=>{
+      this.setState({galerias:response.galerias});
+    }).catch(error=>{
+      console.log(error);
+    })
+    console.log(this.props)
+    RestClient.getProyecto(this.props.match.params.id_proyecto).then(response=>{
+      this.setState({proyecto:response.proyecto});
+    }).catch(error=>{
+      console.log(error);
+    })
+  }
 
   render() {
+
     return (
       <div className="">
+
         <Row>
           <div className="proyectotemplateImage">
             <img src={principal}></img>
           </div>
         </Row>
+
         <Row>
           <div className="content1-proyectotemplate">
             <div className="content1-planning">
@@ -58,53 +74,40 @@ class Template extends Component {
                 Planificación de la Diversificación Turística
               </h3>
               <div>
-                <Tabs defaultActiveKey="1" onChange={this.callback}>
-                  <TabPane tab="Latitud 0" key="1">
-                    <p className="content1-text">La propuesta est  orientada a elevar el nivel jer rquico de atractivos tur sticos destacados, a partir del entendimiento de sus potencialidades tales como biodiversidad, riqueza arqueol gica, hist rico y paisajes. Se escogieron tres sitios que representan la gran diversidad de recursos tur sticos que tiene la provincia.</p>
-                    <h4 className="content1-subtitle">Latitud 0</h4>
-                    <p className="content1-text">En el norte, una celebración al trabajo de la misión geod sica, enviada por la Real Academia Francesa de la Ciencia para comprobar la forma de la tierra con mediciones sobre la línea ecuatorial, lo que dió  origen al nombre Ecuador. </p>
-                    <img className="img1" src={carretera}></img>
-                    <h4 className="content1-subtitle">El Humedal La Segua</h4>
-                    <p className="content1-text">En el centro, un refugio de aves nativas y migratorias, donde est  representada aproximadamente el diez por ciento de la avifauna del Ecuador. Este sitio se halla en la zona de transici n entre el (...)</p>
-                    <div className="content1-read">
-                      <p>LEER MÁS  <Icon type="plus" /></p>
-                    </div>
-                  </TabPane>
-                  <TabPane tab="El Humedal La Segua" key="2">
-
-                  </TabPane>
-                  <TabPane tab="isla de La Plata" key="3">
-
-                  </TabPane>
-                </Tabs>
+              {this.state.proyecto && this.state.proyecto.tabs.length>0 &&
+              this.state.proyecto.tabs.map(table=>
+              <Tabs defaultActiveKey="1" onChange={this.callback}>
+                <TabPane tab={table.tab} key={table.id_proyecto_tab}>
+             <div>{ReactHtmlParser (table.html)}</div>
+                <div className="content1-read">
+                    <p>LEER MÁS  <Icon type="plus" /></p>
+                  </div>
+                </TabPane>
+              </Tabs>
+            )
+          }
               </div>
-
             </div>
+
             <div className="content1-dataSheet">
               <div className="contentMap"><img className="" src={mapa}></img></div>
               <p className="contentData">FICHA TÉCNICA</p>
-              <div className="dataSheet-content">
-                <h5><img className="liston" src={liston}></img>Tipo de Proyecto</h5>
-                <p>Planificación Urbana</p>
+              {this.state.proyecto && this.state.proyecto.ficha.length>0 &&
+                this.state.proyecto.ficha.map(lista=>
+                <div className="dataSheet-content">
+                <h5><img className="liston" src={liston}></img>{lista.titulo}</h5>
+                <p>{lista.texto}</p>
               </div>
-              <div className="dataSheet-content">
-                <h5>Cliente</h5>
-                <p>Ministerio de Turismo de Manabí</p>
-              </div>
-              <div className="dataSheet-content">
-                <h5>Equipo</h5>
-                <p>Ma. Agustina Santan  Gustavo Gonzále  Diego Solano</p>
-              </div>
-              <div className="dataSheet-content">
-                <h5>Colaboradores</h5>
-                <p>Ma. Agustina Santan  Gustavo Gonzále  Diego Solano</p>
-              </div>
+            )
+          }
               <div className="dataSheet-content dataSheetH4">
                 <p>SHARE THIS  <Icon type="facebook" />  <Icon type="instagram" />  <Icon type="twitter" /></p>
               </div>
+
             </div>
           </div>
         </Row>
+
         <Row>
           <div className="componentCenter">
             <div className="tree">
@@ -119,6 +122,7 @@ class Template extends Component {
             </div>
           </div>
         </Row>
+
         <Row>
           <div className="result">
             <div className="result1">
@@ -137,6 +141,7 @@ class Template extends Component {
             </div>
           </div>
         </Row>
+
         <Row>
           <div className="subtitle">
             RESULTADOS
@@ -145,24 +150,16 @@ class Template extends Component {
             Galería del Proyecto
           </div>
         </Row>
-        <Row>
-          <div className="galeria">
-            <img src={galeria1}></img>
-            <img src={galeria2}></img>
-            <img src={galeria3}></img>
-            <img src={galeria4}></img>
-          </div>
-          <div className="galeria2">
-            <img className="galeriaImg" src={galeria5}></img>
-            <div className="galeriaImg2">
-              <div className="galeriaImg3">
-                <img className="ImgGaleria6" src={galeria6}></img>
-                <img className="ImgGaleria8" src={galeria8}></img>
-              </div>
-              <img className="" src={galeria9}></img>
-            </div>
-          </div>
-        </Row>
+         <Row type="flex" justify="start">
+         {this.state.galerias.length>0 &&
+           this.state.galerias.map((gale,index)=>
+             <Col md={6} xs={12}>
+              <div className="galeriaProyectoImg"><img src={gale.img}/></div>
+             </Col>
+          )
+        }
+       </Row>
+
         <Row>
           <div className="subtitle">
             PROYECTOS

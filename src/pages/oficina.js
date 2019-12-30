@@ -14,6 +14,7 @@ import Footer from "./footer";
 import 'antd/dist/antd.css';
 import {  BrowserRouter as Router, Link} from "react-router-dom";
 import RestClient from '../network/restClient';
+import { Menu, Dropdown, Icon } from 'antd';
 const { Meta } = Card;
 
 class Oficina extends Component{
@@ -21,11 +22,11 @@ class Oficina extends Component{
   constructor(props){
     super(props);
     this.state={
-      equipo: undefined
-    }
-    super(props);
-    this.state={
-      galeria: undefined
+      equipo: [],
+      proyectof: undefined,
+      homed:undefined,
+      homes:undefined
+
     }
   }
 
@@ -36,27 +37,41 @@ class Oficina extends Component{
       console.log(error);
     })
 
-    RestClient.getMasProyectos({size:4}).then(response=>{
-      this.setState({galeria:response.galeria});
+    RestClient.getProyectof({size:4}).then(response=>{
+      this.setState({proyectof:response.proyectof});
     }).catch(error=>{
       console.log(error);
     })
+    RestClient.getHomed().then(response=>{
+      this.setState({homed:response.homed});
+    }).catch(error=>{
+      console.log(error);
+    })
+    RestClient.getHomes().then(response=>{
+      this.setState({homes:response.homes});
+    }).catch(error=>{
+      console.log(error);
+    })
+
   }
 
   render() {
     return (
       <div className="oficina">
+      {this.state.homed!=undefined &&
         <Row>
           <div className="mainPicture">
             <img src={oficina}></img>
           </div>
-          <h3 className="mainText1">Bienvenidos</h3>
-          <p className="mainText2">SOBRE NOSOTROS</p>
-          <div className="mainText3">
-            <p>Somos una firma de diseño y planificación que busca armonizar los asentamietos humanos con los sistemas naturales.</p>
-          </div>
+
+            <h3 className="mainText1"> {this.state.homed.titulo} </h3>
+            <p className="mainText2"> {this.state.homed.subtitulo} </p>
+            <div className="mainText3">
+              <p>{this.state.homed.html}</p>
+            </div>
         </Row>
-        <Row className="titleFloat ">
+      }
+      <Row className="titleFloat ">
           <div className="subtitle2">
             <h4 className="mainText1">Enfoque</h4>
           </div>
@@ -89,6 +104,7 @@ class Oficina extends Component{
             </div>
           </div>
         </Row>
+
         <Row>
         <div className="subtitle2" style={{margin:'0px', padding:'0px' }}>
           <h4 className="mainText1">El equipo</h4>
@@ -101,8 +117,9 @@ class Oficina extends Component{
         <div className="cardsOficina" style={{ padding: '10px' }}>
           {this.state.equipo!=undefined &&
           <Row gutter={16}>
-            {this.state.equipo.map((item) =>
-            <Col md={8} xs={24} key={item.id}className="minCard">
+          {this.state.equipo.length>0 &&
+            this.state.equipo.map(item=>
+            <Col md={8} xs={24} className="minCard">
               <Card bordered={false}
                 style={{ width: '80%', margin:20 }}
                 cover={<div className="divPictureDetail"><img className="pictureDetail" src={item.img_integrante}/></div>}>
@@ -111,46 +128,51 @@ class Oficina extends Component{
                 <p className="mail"><b>{item.correo}</b></p>
                 <p className="small studies">{item.profesion}</p>
                 <p className="detail small">{item.html}</p>
-                <div className="plusDiv"><img className="plus" src={plus}></img>
-                </div>
+                <div className="plusDiv"><img className="plus" src={plus}></img></div>
                 <p className="detailFooter">OBJETO FAVORITO</p>
               </Card>
             </Col>
-            )}
+            )
+          }
           </Row>
           }
         </div>
         </div>
-        <Row>
-          <div className="sentence">
+        {this.state.homes!=undefined &&
+          <Row>
+            <div className="sentence">
             <img className="comillas"src={comillas}></img>
-            <p>la arquitectura solo se considera completa con la intervención del ser humano que la experimenta</p>
+            <p>{this.state.homes.html}</p>
             <img className="sentenceImg" src={sentence}></img>
-          </div>
-        </Row>
+            </div>
+          </Row>
+        }
         <div className="subtitle2">
           <h4 className="mainText1">Algunos Proyectos</h4>
         </div>
-        {this.state.galeria!=undefined &&
         <div style={{padding: '0px', margin: '0px', width:'99.4%' }}>
+        {this.state.proyectof!=undefined &&
         <Row gutter={16}>
-          {this.state.galeria.map((item) =>
+        {this.state.proyectof.length>0 &&
+          this.state.proyectof.map(ga=>
           <Col md={6} xs={12}>
             <Card bordered={false}>
               <div className="category">
-                <Link to="/template"><img src={item.url_img}></img></Link>
-                <p className="textCategoryVertival">CATEGORIA  {item.categoria}</p>
+                <Link to="/proyecto"><img src={ga.url_img}></img></Link>
+                <p className="textCategoryVertival">CATEGORIA  {ga.categoria}</p>
                 <div className="textCategory">
-                  <p className="textCategoryP">{item.ciudad}, 2018</p>
-                  <p><b>{item.titulo}</b></p>
+                  <p className="textCategoryP">{ga.ciudad}, 2018</p>
+                  <p><b>{ga.titulo}</b></p>
                 </div>
               </div>
             </Card>
           </Col>
-          )}
+          )
+          }
         </Row>
+        }
       </div>
-      }
+
       <div style={{padding: '35px 0px 0px 0px' }}>
         <Footer/>
       </div>
@@ -158,4 +180,5 @@ class Oficina extends Component{
     );
   }
 }
+
 export default Oficina;

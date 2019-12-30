@@ -15,9 +15,9 @@ class Main extends Component {
         <NavBar/>
           <Route exact path="/" component={Home}/>
           <Route exact path="/proyectos" component={ProyectosComponet} />
-          <Route exact path="/template" component={TemplateComponet} />
+          <Route exact path="/proyecto/:id_proyecto" component={TemplateComponet} />
           <Route path="/oficina" component={OficinaComponet} />
-          <Route path="/noticia" component={NoticiasComponet} />
+          <Route path="/noticia/:id_noticia" component={NoticiasComponet} />
           <Route path="/contacto" component={ContactoComponet} />
       </HashRouter>
     );

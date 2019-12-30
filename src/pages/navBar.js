@@ -38,10 +38,10 @@ class NavBar extends Component {
                   <Link className="nav-link" to="/proyectos"><b><Icon type="plus"  className="icon"/> Proyectos</b></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="./oficina"><b><Icon type="plus"  className="icon"/> Oficina</b></Link>
+                  <Link className="nav-link" to="/oficina"><b><Icon type="plus"  className="icon"/> Oficina</b></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="./contacto"><b>< Icon type="plus"  className="icon"/> Contacto</b></Link>
+                  <Link className="nav-link" to="/contacto"><b>< Icon type="plus"  className="icon"/> Contacto</b></Link>
                 </li>
               </ul>
             </div>

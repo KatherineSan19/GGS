@@ -20,146 +20,74 @@ class General extends Component{
     super(props);
     this.state={
       proyectos: undefined
+
     }
   }
-
-
   callback=(key)=>{
     console.log(key);
   }
-
+  componentDidMount(){
+    RestClient.getProyectos().then(response=>{
+      this.setState({proyectos:response.proyectos});
+    }).catch(error=>{
+      console.log(error);
+    })
+  }
   render(){
     return(
       <div className="">
 
         <div className="generalTabs">
-          <h3><Link to="./noticia">Arquitectura</Link></h3>
-          <h3><Link to="./noticia">Diseño Urbano</Link></h3>
-          <h3><Link to="./noticia">Paisaje</Link></h3>
-          <h3><Link to="./noticia">Planificación Territorial</Link></h3>
-          <h3><Link to="./noticia">Planificación Estratégica</Link></h3>
+          <h3><Link to="./Arquitectura">Arquitectura</Link></h3>
+          <h3><Link to="./Diseño_Urbano">Diseño Urbano</Link></h3>
+          <h3><Link to="./Paisaje">Paisaje</Link></h3>
+          <h3><Link to="./Planificación_Territorial">Planificación Territorial</Link></h3>
+          <h3><Link to="./Planificación_Estratégica">Planificación Estratégica</Link></h3>
+          <h3><Link to="./noticia">Noticias</Link></h3>
         </div>
         <div className="tabPGeneral">
           <Tabs defaultActiveKey="1" onChange={this.callback}>
             <TabPane tab="Arquitectura" key="1">
             </TabPane>
+
             <TabPane tab="Diseño Urbano" key="2">
-
             </TabPane>
+
             <TabPane tab="Paisaje" key="3">
-
             </TabPane>
+
             <TabPane tab="Planificación Territorial" key="4">
-
             </TabPane>
+
             <TabPane tab="Planificacion Estratégica" key="5">
-
             </TabPane>
+
+            <TabPane tab="Noticias" key="6">
+            </TabPane>
+
           </Tabs>
         </div>
         <div className="generalImg" style={{padding: '0px', margin: '0px' }}>
+        {this.state.proyectos!=undefined &&
           <Row gutter={16}>
+          {this.state.proyectos.length>0 &&
+            this.state.proyectos.map(pro=>
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <Link to="/template"><img src={categoria1}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
+                  <Link to="/proyecto"><img src={pro.url_img}></img></Link>
+                  <p className="textCategoryVertival">CATEGORIA {pro.categoria}</p>
                   <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
+                    <p className="textCategoryP">{pro.ciudad}, 2018</p>
+                    <p>{pro.titulo}</p>
                   </div>
                 </div>
               </Card>
             </Col>
-            <Col md={6} xs={12}>
-              <Card bordered={false}>
-                <div className="category">
-                  <Link to="/template"><img src={categoria2}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
-                  <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-            <Col md={6} xs={12}>
-              <Card bordered={false}>
-                <div className="category">
-                  <Link to="/template"><img src={categoria3}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
-                  <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-            <Col md={6} xs={12}>
-              <Card bordered={false}>
-                <div className="category">
-                  <Link to="/template"><img src={categoria4}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
-                  <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
-                  </div>
-                </div>
-              </Card>
-            </Col>
+          )
+        }
           </Row>
-        </div>
-        <div style={{padding: '0px', margin: '0px' }}>
-          <Row gutter={16}>
-            <Col md={6} xs={12}>
-              <Card bordered={false}>
-                <div className="category">
-                  <Link to="/template"><img src={categoria1}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
-                  <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-            <Col md={6} xs={12}>
-              <Card bordered={false}>
-                <div className="category">
-                  <Link to="/template"><img src={categoria2}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
-                  <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-            <Col md={6} xs={12}>
-              <Card bordered={false}>
-                <div className="category">
-                  <Link to="/template"><img src={categoria3}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
-                  <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-            <Col md={6} xs={12}>
-              <Card bordered={false}>
-                <div className="category">
-                  <Link to="/template"><img src={categoria4}></img></Link>
-                  <p className="textCategoryVertival">CATEGORIA 1</p>
-                  <div className="textCategory">
-                    <p className="textCategoryP">Manta, 2018</p>
-                    <p>Planificación de la diversificación turística</p>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-          </Row>
+        }
         </div>
         <div style={{padding: '35px 0px 0px 0px' }}>
           <Footer/>

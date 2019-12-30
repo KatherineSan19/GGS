@@ -55,10 +55,20 @@ export default class RestClientObj {
       .get('/home')
       .then(response => response.data)
   }
-
-  static getNoticias = () => {
+  static getHomed = () => {
     return RestClientObj.instanceAxios
-      .get('/noticia')
+      .get('/homed')
+      .then(response => response.data)
+  }
+  static getHomes = () => {
+    return RestClientObj.instanceAxios
+      .get('/homes')
+      .then(response => response.data)
+  }
+
+  static getNoticia = (id_noticia) => {
+    return RestClientObj.instanceAxios
+      .get('/noticia/' + id_noticia)
       .then(response => response.data)
   }
 
@@ -67,14 +77,9 @@ export default class RestClientObj {
       .get('/equipo')
       .then(response => response.data)
   }
-  // static getGaleria2 = (data) => {
-  //   return RestClientObj.instanceAxios
-  //     .post('/galeria',data)
-  //     .then(response => response.data)
-  // }
-  static getMasProyectos = (id) => {
+  static getProyectof = (id) => {
     return RestClientObj.instanceAxios
-      .get('/mas_proyectos')
+      .get('/proyectof')
       .then(response => response.data)
   }
   static getProyectos = (id) => {
@@ -82,9 +87,25 @@ export default class RestClientObj {
       .get('/proyectos')
       .then(response => response.data)
   }
-  static getProyecto = (id) => {
+  static getGalerias = (id) => {
     return RestClientObj.instanceAxios
-      .get('/proyecto')
+      .get('/galerias')
+      .then(response => response.data)
+  }
+  static getOtherpro = (id) => {
+    return RestClientObj.instanceAxios
+      .get('/otherpro')
+      .then(response => response.data)
+  }
+  static getProyecto = (id_proyecto) => {
+    return RestClientObj.instanceAxios
+      .get('/proyecto/' + id_proyecto)
+      .then(response => response.data)
+  }
+  static getEmail = (obj) => {
+    console.log(obj)
+    return RestClientObj.instanceAxios
+      .post('/email',obj)
       .then(response => response.data)
   }
 
