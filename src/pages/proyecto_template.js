@@ -49,8 +49,10 @@ class Template extends Component {
     })
     console.log(this.props)
     RestClient.getProyecto(this.props.match.params.id_proyecto).then(response=>{
-      this.setState({proyecto:response.proyecto});
+      this.setState({proyecto:response.proyecto})
+      console.log(this.state.proyecto.titulo,"Se pudo")
     }).catch(error=>{
+      console.log("no se pudo")
       console.log(error);
     })
   }
@@ -71,7 +73,7 @@ class Template extends Component {
             <div className="content1-planning">
               <p className="content1-date">Published July 2019</p>
               <h3 className="content1-title">
-                Planificación de la Diversificación Turística
+              {this.state.proyecto.titulo}
               </h3>
               <div>
               {this.state.proyecto && this.state.proyecto.tabs.length>0 &&

@@ -75,7 +75,7 @@ class General extends Component{
             <Col md={6} xs={12}>
               <Card bordered={false}>
                 <div className="category">
-                  <Link to="/proyecto"><img src={pro.url_img}></img></Link>
+                  <Link to="/proyecto/{pro.id_proyecto}"><img src={pro.url_img}></img></Link>
                   <p className="textCategoryVertival">CATEGORIA {pro.categoria}</p>
                   <div className="textCategory">
                     <p className="textCategoryP">{pro.ciudad}, 2018</p>
